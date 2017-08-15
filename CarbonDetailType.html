@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>点点环境-登录</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/ichart.1.2.min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body>
+    <div class="headerSpace"></div>
+    <div class="header02">
+        <b class="back" id="back_btn"></b>
+        <span class="txt noBefore" id="span_currname">碳账户</span>
+        <b class="txt02" id="btnDetail">明细</b>
+    </div>
+
+    <div class="tanbiBalance account">
+        <div class="Logined">
+            <h2>碳币余额</h2>
+            <p class="balance" id="p_balance"></p>
+            <div class="recharge" id="btn_recharge">去充值</div>
+        </div>
+    </div>
+    <div class="space"></div>
+    <div class="orderMenu">
+        <ul class="twoMenu" id="ul_detail">
+            <li id="li_in" detailtype="DC170208100002"><span>收入明细</span></li>
+            <li id="li_out" detailtype="DC170208100003"><span>支出明细</span></li>
+        </ul>
+    </div>
+
+    <div class="rechargeRecord">
+        <ul class="rechargeRecord_lsit pastRecords" id="ul_recordlist">
+        </ul>
+        <div class="lookMore" id="div_more">查看更多明细</div>
+    </div>
+    <div class="space"></div>
+    <div class="chartWrap_recharge">
+        <h2><span>碳币明细表</span></h2>
+        <div class='canvasDiv' id='canvasDiv'></div>
+        <div class="co_tip_recharge clearfix" style="display:none">
+            <span>步行炭币</span>
+            <span>购买炭币</span>
+        </div>
+    </div>
+
+
+</body>
+</html>
+<script type="text/javascript">
+    var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/carbondetailtype.js", "/js/ichart.1.2.min.js"]];
+            WriteStatic(staticlist);
+</script>

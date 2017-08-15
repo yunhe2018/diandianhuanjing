@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>点点环境-充值</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/ichart.1.2.min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+    <script>
+        if (IsInWeiXin.check()) {
+            $.each(g_const_OrderConfirmRefer, function (k, o) {
+                if (document.referrer.toLowerCase().indexOf(o) > -1) {
+                    var wxUrl = g_const_PageURL.Recharge;
+                    WxInfo.GetPayID(wxUrl);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="">
+        <div class="headerSpace"></div>
+        <div class="header02">
+            <b class="back" id="btnback"></b>
+            <span class="txt nopic">碳币充值</span>
+            <b class="add" id="" style="display:none"></b>
+        </div>
+        <div class="rechargeNum">
+            <h3 class="rechargeNum_h3">充值碳币</h3>
+            <ul class="clearfix" id="balanceList">
+                <li class="on" data-m="0.05">
+                    0.05
+                </li>
+                <li data-m="10">
+                    10
+                </li>
+                <li data-m="20">
+                    20
+                </li>
+                <li data-m="50">
+                    50
+                </li>
+                <li data-m="100">
+                    100
+                </li>
+                <li data-m="200">
+                    200
+                </li>
+                <li data-m="500">
+                   500
+                </li>
+            </ul>
+        </div>
+        <div class="apply" id="divPaytype" style="">
+            <div class="fx pay-select" module="202063">
+                <div class="divt">支付方式</div>
+                <div class="lid" id="divalipay" style="display:none">
+                    <a class="sela on">&nbsp;</a><span class="fx-zf"><b>&nbsp;</b>支付宝</span>
+                </div>
+                <div class="lid" id="divweixin" style="display:none">
+                    <a class="sela on">&nbsp;</a><span class="fx-weix"><b>&nbsp;</b>微信支付</span>
+                </div>
+                <div class="lid" id="divalipayapp" style="display:none">
+                    <a class="sela on" id="a_app_al">&nbsp;</a><span class="fx-zf"><b>&nbsp;</b>支付宝</span>
+                </div>
+                <div class="lid" id="divweixinapp" style="display:none">
+                    <a class="sela" id="a_app_wx">&nbsp;</a><span class="fx-weix"><b>&nbsp;</b>微信支付</span>
+                </div>
+            </div>
+        </div>
+        <div style="height:200px;"></div>
+        <div class="toNewBtn" id="btnSubmit" style=""><span id="span_money"></span> <span>立即充值</span></div>
+        
+    </div>
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/iscroll.js", "/js/recharge.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>

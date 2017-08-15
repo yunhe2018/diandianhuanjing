@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点点环境-天气详情</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <meta property="wb:webmaster" content="b97e9eb0fa0c90be" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mwtIbCVKxq5l7TMLCpNrCnoOxGnWlotK"></script>
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body class="hb_wth_wrap">
+    <div>
+        <div class="header">
+            <span class="back" id="back_btn"></span>
+            <span class="txt" id="i_city"></span>
+            <span class="time" id="span_time"></span>
+        </div>
+        <div class="score_wrap">
+            <p class="score_numWrap"><span id="span_score" class="score_num"></span></p>
+            <p class="contentWrap"><span class="content" id="span_weather">晴转多云 西北风2级</span></p>
+            <div class="wea_data">
+                <img id="div_index">
+                <span id="span_index"></span>
+            </div>
+        </div>
+        <!--单条折线图-->
+        <div class="kLine">
+            <img class="numbImg" src="img/trend.png">
+            <h1 class="kLine_h1">空气污染</h1>
+            <div class="checksWrap">
+                <ul class="checks" id="ul_week_kline"></ul>
+                <div class="myChart_k01" id="myChart_k" width="320" height="110"></div>
+            </div>
+            <div class="mask"></div>
+        </div>
+        <!--end-->
+        <!--双条折线图-->
+        <div class="kLine">
+            <h1 class="kLine_h1 kLine_h2">未来七天天气预报</h1>
+            <div class="checksWrap">
+                <ul class="week" id="ul_week_kline_7"></ul>
+                <ul class="checks checks02" id="ul_week_night_7"></ul>
+                <div class="myChart_k02" id="myChart_k_wearher" width="320" height="300"></div>
+            </div>
+            <div class="mask" style="display:block"></div>
+        </div>
+        <!--end-->
+    </div>
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/weatherdetail.js", "/js/ichart.1.2.min.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>
+
+
+

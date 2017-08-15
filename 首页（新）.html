@@ -1,0 +1,507 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点点环境-首页</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <meta property="wb:webmaster" content="b97e9eb0fa0c90be" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mwtIbCVKxq5l7TMLCpNrCnoOxGnWlotK"></script>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+    <div class="map-for-location" id="allmap"></div>
+    <div class="indexBox" >
+        <div class="weather clearfix" id="div_weather">
+            <span class="pic fl"></span>
+            <span class="txt fl" id="span_temp"></span>
+        </div>
+        <div class="lt_date" id="lt_date">
+            <div class="zuji" id="div_zuji">
+                <span class="pic fl" id="div_step"></span>
+                <span class="txt fl" id="span_step"></span>
+            </div>
+            <div class="zuji" id="div_tb">
+                <span class="tanbi fl" id="div_carbon"></span>
+                <span class="txt fl" id="span_tb"></span>
+            </div>
+        </div>
+            <div class="updateOrCore">
+                <span class="update" id="span_update"></span>
+                <span class="core" id="span_core"></span>
+            </div>
+            <ul class="topMenu">
+                <li id="wode">
+                    <div class="pic"></div>
+                    <p class="txt">我的</p>
+                </li>
+                <li id="loupan">
+                    <div class="pic"></div>
+                    <p class="txt">楼盘</p>
+                </li>
+                <li id="buy" style="display:none">
+                    <div class="pic"></div>
+                    <p class="txt">报告</p>
+                </li>
+                <!--<li id="center">
+                <div class="pic"></div>
+                <p class="txt">中心</p>
+            </li>-->
+            </ul>
+            <b class="bigcart"></b>
+            <span class="position_curr" style="display:none">当前位置<i></i></span>
+        </div>
+    <div class="thirdIndex">
+    	<!--底部环境评分和位置定位-->
+    	<div class="pmWrap pmWrap-good no clearfix">
+                <span class="slide"></span>
+                <div class="pm bad fl" id="div_score"><p>环境质量评分：</p>22<span>分</span></div>
+                <div class="address fl">
+                    <p id="p_PositionName">东城区中华路甲10号</p>
+                    <div class="clearfix">
+                        <span class="pic fl" id="div_level"><img id="" src="img/bad.png"> </span>
+                        <span class="txt fl" id="div_upper">环境质量差，一项或多项环境指标严重不达标。更多详情，请购买环境质量报告。</span>
+                    </div>
+                </div>
+            </div>
+        <!--end-->
+        <!--新首页上滑-->
+        <div class="newBox" id="newBox">
+            <div class="header">
+                <span class="back" id="add_btn"></span>
+                <span class="txt" id="span_PositionName">东城区中华路甲10号</span>
+                <span class="operat">...</span>
+            </div>
+    		
+            <div class="general clearfix">
+            	<div class="score">
+                	<img src="img/general.png" >
+                    <div class="pm"><span>环境质量评分：</span>47</div>
+                    <span class="pic fl"><img id="" src="img/bad.png"> </span>
+                    <div class="weather_02 clearfix">
+                            <span class="pic02 fl"></span>
+                            <span class="txt fl">23°/30°</span>
+                    </div>
+                </div>
+                <!--绘制雷达图-->
+                <div class="chartWrap">
+                	<div class="chartPic"><canvas id="myChart" width="100" height="100"></canvas></div>
+                	<div class="chartTxt">
+                    周边空气清新，噪音干扰较平时更少，其他环境指标均符合国家的相关标准，与各种污染源、辐射源存在一定的安全距离，潜在风险较低，了解更多请<span class="chartTxt_cart"><img src="img/chartTxt_cart.png"></span><a href="javascript:;">去报告库</a>
+                  </div>
+                </div>
+            </div>
+            <div class="general clearfix">
+              <div class="score">
+                  <img class="numbImg" src="img/numb.png" >
+                  <ul class="pollute clearfix" id="ul_DetailList"><li class="fl" onclick="Project.Load_AQIDialog('空气')"><p>空气<span class="t_state good ">良</span></p><b>55</b></li><li class="fl" onclick="Project.Load_AQIDialog('噪音')"><p>噪音<span class="t_state yiban ">III类</span></p><b>55/65</b></li><li class="fl" onclick="Project.Load_AQIDialog('污染源')"><p>污染源<span class="t_state bad ">垃圾站</span></p><b>2Km以内</b></li><li class="fl" onclick="Project.Load_AQIDialog('水质')"><p>水质<span class="t_state good ">II类</span></p><b>良</b></li><li class="fl" onclick="Project.Load_AQIDialog('土壤')"><p>土壤<span class="t_state good ">ll类</span></p><b>良</b></li><li class="fl" onclick="Project.Load_AQIDialog('危险品')"><p>危险品<span class="t_state verygood ">安全</span></p><b>无</b></li><li class="fl" onclick="Project.Load_AQIDialog('辐射')"><p>辐射<span class="t_state verygood ">优</span></p><b>无</b></li><li class="fl" onclick="Project.Load_AQIDialog('容积率')"><p>容积率<span class="t_state verygood ">1.2</span></p><b>长安太和</b></li><li class="fl" onclick="Project.Load_AQIDialog('绿化率')"><p>绿地率<span class="t_state verygood ">40%</span></p><b>长安太和</b></li></ul>
+              </div>
+            </div>
+            <!--单条折线图-->
+            <div class="kLine">
+              <img class="numbImg" src="img/trend.png" >
+              <h1 class="kLine_h1">空气污染</h1>
+              <div class="checksWrap">
+                <ul class="checks">
+                  <li>
+                    <span class="time">8.12</span>
+                    <span class="pollute good ">严污</span>
+                  </li>
+                  <li>
+                    <span class="time">8.12</span>
+                    <span class="pollute verygood ">严污</span>
+                  </li>
+                  <li>
+                    <span class="time">8.12</span>
+                    <span class="pollute verybad ">严污</span>
+                  </li>
+                  <li>
+                    <span class="time">8.12</span>
+                    <span class="pollute veryverybad ">严污</span>
+                  </li>
+                  <li>
+                    <span class="time">8.12</span>
+                    <span class="pollute veryverybadandbad ">严污</span>
+                  </li>
+                  <li>
+                    <span class="time">8.12</span>
+                    <span class="pollute bad ">严污</span>
+                  </li>
+                    <li>
+                        <span class="time">8.12</span>
+                        <span class="pollute bad ">严污</span>
+                    </li>
+                </ul>
+                <canvas class="myChart_k01" id="myChart_k" width="320" height="110"></canvas>
+              </div>
+              <div class="mask"></div>
+            </div>
+            <!--end-->
+            <!--双条折线图-->
+            <div class="kLine">
+              <h1 class="kLine_h1 kLine_h2">未来七天天气预报</h1>
+              <div class="checksWrap">
+                <ul class="week" id="ul_week_kline_7">
+                  <li>
+                    <p class="txt01">周一</p>
+                    <p class="txt02">8.12</p>
+                  </li>
+                  <li>
+                    <p class="txt01">周二</p>
+                    <p class="txt02">8.12</p>
+                  </li>
+                  <li>
+                    <p class="txt01">周三</p>
+                    <p class="txt02">8.12</p>
+                  </li>
+                  <li>
+                    <p class="txt01">周四</p>
+                    <p class="txt02">8.12</p>
+                  </li>
+                  <li>
+                    <p class="txt01">周五</p>
+                    <p class="txt02">8.12</p>
+                  </li>
+                  <li>
+                    <p class="txt01">周六</p>
+                    <p class="txt02">8.12</p>
+                  </li>
+                    <li>
+                        <p class="txt01">周日</p>
+                        <p class="txt02">8.12</p>
+                    </li>
+                </ul>
+                <ul class="checks" id="ul_week_wind_7">
+                  <li>
+                    <span class="time">西南风<b>3-4级</b></span>
+                    <span class="pollute good ">良</span>
+                  </li>
+                  <li>
+                    <span class="time">西南风<b>3-4级</b></span>
+                    <span class="pollute verygood ">优</span>
+                  </li>
+                  <li>
+                    <span class="time">西南风<b>3-4级</b></span>
+                    <span class="pollute good ">良</span>
+                  </li>
+                  <li>
+                    <span class="time">西南风<b>3-4级</b></span>
+                    <span class="pollute bad ">轻度</span>
+                  </li>
+                  <li>
+                    <span class="time">西南风<b>3-4级</b></span>
+                    <span class="pollute verybad ">重度</span>
+                  </li>
+                  <li>
+                    <span class="time">西南风<b>3-4级</b></span>
+                    <span class="pollute veryverybad ">严重</span>
+                  </li>
+                  <li>
+                    <span class="time">西南风<b>3-4级</b></span>
+                    <span class="pollute veryverybadandbad ">很重</span>
+                  </li>
+                </ul>
+                <canvas class="myChart_k02" id="myChart_k02" width="320" height="130"></canvas>
+              </div>
+              <div class="mask" style="display:block"></div>
+            </div>
+            <!--end-->
+            <div class="detailsWrap" style="background:none">
+                <h3 style="color:#fff">附近楼盘环境数据<span id="span_more" style="color:#fff">查看更多地图</span></h3>
+                <span class="seeList" id="span_ProjectList"><i style="border: 1px solid #fff;color:#fff;">查看附近楼盘</i></span>
+                <ul class="details" id="ul_tjlist">
+                    <li><a class="clearfix" onclick="Project.Load_Detail('LP161004102450')"><div class="pic fl"><img src="/img/default_small_4.jpg"></div><div class="con fl"><h4>大拐棒胡同<span></span></h4><p class="title02">2km以内 | 大拐棒胡同</p><div class="price02">￥0.01</div></div><b class="lookD">查看详情</b></a></li>
+                    <li><a class="clearfix" onclick="Project.Load_Detail('LP161004102450')"><div class="pic fl"><img src="/img/default_small_4.jpg"></div><div class="con fl"><h4>大拐棒胡同<span></span></h4><p class="title02">2km以内 | 大拐棒胡同</p><div class="price02">￥0.01</div></div><b class="lookD">查看详情</b></a></li>
+                    <li><a class="clearfix" onclick="Project.Load_Detail('LP161004102450')"><div class="pic fl"><img src="/img/default_small_4.jpg"></div><div class="con fl"><h4>大拐棒胡同<span></span></h4><p class="title02">2km以内 | 大拐棒胡同</p><div class="price02">￥0.01</div></div><b class="lookD">查看详情</b></a></li>
+                    <li><a class="clearfix" onclick="Project.Load_Detail('LP161004102450')"><div class="pic fl"><img src="/img/default_small_4.jpg"></div><div class="con fl"><h4>大拐棒胡同<span></span></h4><p class="title02">2km以内 | 大拐棒胡同</p><div class="price02">￥0.01</div></div><b class="lookD">查看详情</b></a></li>
+                    <li><a class="clearfix" onclick="Project.Load_Detail('LP161004102450')"><div class="pic fl"><img src="/img/default_small_4.jpg"></div><div class="con fl"><h4>大拐棒胡同<span></span></h4><p class="title02">2km以内 | 大拐棒胡同</p><div class="price02">￥0.01</div></div><b class="lookD">查看详情</b></a></li>
+                    <li><a class="clearfix" onclick="Project.Load_Detail('LP161004102450')"><div class="pic fl"><img src="/img/default_small_4.jpg"></div><div class="con fl"><h4>大拐棒胡同<span></span></h4><p class="title02">2km以内 | 大拐棒胡同</p><div class="price02">￥0.01</div></div><b class="lookD">查看详情</b></a></li>
+                    <li><a class="clearfix" onclick="Project.Load_Detail('LP161004102450')"><div class="pic fl"><img src="/img/default_small_4.jpg"></div><div class="con fl"><h4>大拐棒胡同<span></span></h4><p class="title02">2km以内 | 大拐棒胡同</p><div class="price02">￥0.01</div></div><b class="lookD">查看详情</b></a></li>
+                    <li><a class="clearfix" onclick="Project.Load_Detail('LP161004102450')"><div class="pic fl"><img src="/img/default_small_4.jpg"></div><div class="con fl"><h4>大拐棒胡同<span></span></h4><p class="title02">2km以内 | 大拐棒胡同</p><div class="price02">￥0.01</div></div><b class="lookD">查看详情</b></a></li>
+                </ul>
+            </div>
+            <div class="" style="height:70px"></div>
+        </div>
+
+
+    </div>
+    <ul class="botNav" style="display:none">
+                <li id="zhuye">
+                    <span class="curr">首页</span>
+                </li>
+                <li id="loupan1">
+                    <span>楼盘</span>
+                </li>
+                <li id="buy1">
+                    <span>报告库</span>
+                </li>
+                <li id="wode1">
+                    <span>我的</span>
+                </li>
+    </ul>
+    <div class="APIdialog thirdIndexAPIdialog" id="div_AQI" style="display:none">
+      <img class="APIdialogImg" src="img/numa.png" >
+      <span class="close" onclick="Project.Close_AQIDialog()"></span>
+      <p>空气质量指数（Air Quality Index，简称AQI）可以定量描述空气质量状况。空气质量按照空气质量指数大小分为六级，相对应空气质量的六个类别，指数越大、级别越高说明污染的情况越严重，对人体的健康危害也就越大。
+      </p>
+      <div class="tb"><table border="0" class="tb_01"><thead><tr><th class="cel-50">级别</th><th class="cel-50">空气质量指数</th></tr></thead><tbody><tr><td>1级 优</td><td>0-50</td></tr><tr><td>2级 良</td><td>51-100</td></tr><tr><td>3级 轻度污染</td><td>101-200</td></tr><tr><td>4级 中度污染</td><td>201-250</td></tr><tr><td>5级 重度污染</td><td>251-300</td></tr><tr><td>6级 严重污染</td><td>300以上</td></tr></tbody></table></div></div>
+    
+</body>
+</html>
+<script src="js/jquery-2.1.4-min.js"></script>
+<script src="js/Chart.js"></script>
+<script> 
+  $(function(){
+                       var radarChartData = { 
+                           labels: ["空气", "噪音", "污染源", "水质", "土壤", "危险品", "辐射", "容积率", "绿化率"],
+                           datasets: [ 
+                               { 
+                                   label: "", 
+                                   fillColor: "rgba(0,0,0,0)", 
+                                   strokeColor: "rgba(0,0,0,0)", 
+                                   pointColor: "rgba(0,0,0,0)", 
+                                   pointStrokeColor: "rgba(0,0,0,0)", 
+                                   pointHighlightFill: "rgba(0,0,0,0)", 
+                                   pointHighlightStroke: "rgba(0,0,0,0)", 
+                                   data: [4,4,4,4,4,4,4,4,4] 
+                               }, 
+                               { 
+                                   label: "", 
+                                   fillColor: "rgba(0,0,0,0)", 
+                                   strokeColor: "rgba(0,0,0,0)", 
+                                   pointColor: "rgba(0,0,0,0)", 
+                                   pointStrokeColor: "rgba(0,0,0,0)", 
+                                   pointHighlightFill: "rgba(0,0,0,0)", 
+                                   pointHighlightStroke: "rgba(0,0,0,0)", 
+                                   data: [null,null,null,null,null,null,null,null,true] 
+                               }, 
+                               { 
+                                   label: "", 
+                                   fillColor: "rgba(105,145,92,0.9)", //rgba(255,239,229,0.6)面积颜色
+                                   strokeColor: "rgba(250,250,250,0)", //rgba(227,211,201,0.6) 面积外框颜色
+                                   pointColor: "rgba(250,250,250,0)", //rgba(255,95,1,1) 断点颜色
+                                   pointStrokeColor:"transparent" , //"#ff5f01"  transparent
+                                   pointHighlightFill: "transparent", //"#ff5f01"
+                                   pointHighlightStroke: "rgba(200,76,4,0)", //rgba(200,76,4,0.8)
+                                   data: [4,1,2,3,1,2,3,1,2] 
+                               } 
+                           ] 
+                       }; 
+                           window.myRadar = new Chart(document.getElementById("myChart").getContext("2d")).Radar(radarChartData, {
+                              responsive: true ,
+                              //Number - Point label font size in pixels  
+                              pointLabelFontSize : 8,
+                              //String - Colour of the scale line 
+                              scaleLineColor : "rgba(255,255,255,.7)",
+                              //Number - Scale label font size in pixels  
+                              scaleFontSize : 1,
+                              //String - Scale label font colour  
+                              scaleFontColor : "#fff",
+                              //String - The colour of the label backdrop 
+                              scaleBackdropColor : "rgba(255,255,255,0.75)",
+                              //String - Colour of the angle line
+                              angleLineColor : "rgba(255,255,255,0.75)",
+                              //String - Point label font colour  
+                              pointLabelFontColor : "#fff"
+                            }); 
+                       }); 
+</script> 
+
+<script type="text/javascript">
+$(function(){
+
+  var data = {
+      labels: ["January", "February", "March", "April", "May", "June", "June"],
+            datasets: [
+            {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0)",
+            strokeColor: "rgba(220,220,220,1)",//线
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [165, 5, 80, 1, 56, 55,90]
+            }
+            ]
+            };
+
+  var options = {
+
+            //Boolean - If we should show the scale at all
+            showScale: false,
+            //Boolean - whether to make the chart responsive to window resizing
+            responsive: false,
+            ///Boolean - Whether grid lines are shown across the chart
+            scaleShowGridLines : true,
+
+            //String - Colour of the grid lines
+            scaleGridLineColor : "rgba(0,0,0,.05)",
+
+            //Number - Width of the grid lines
+            scaleGridLineWidth : 1,
+
+            //Boolean - Whether to show horizontal lines (except X axis)
+            scaleShowHorizontalLines: true,
+
+            //Boolean - Whether to show vertical lines (except Y axis)
+            scaleShowVerticalLines: true,
+
+            //Boolean - Whether the line is curved between points
+            bezierCurve : true,
+
+            //Number - Tension of the bezier curve between points
+            bezierCurveTension : 0,//0.4k线的弧度
+
+            //Boolean - Whether to show a dot for each point
+            pointDot : true,
+
+            //Number - Radius of each point dot in pixels断点圆圈的大小
+            pointDotRadius : 2,
+
+            //Number - Pixel width of point dot stroke 折线的缩放（具体没懂，反正能调整为我想要的）
+            pointDotStrokeWidth : 3,
+
+            //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+            pointHitDetectionRadius : 20,
+
+            //Boolean - Whether to show a stroke for datasets
+            datasetStroke : true,
+
+            //Number - Pixel width of dataset stroke
+            datasetStrokeWidth : 2,
+
+            //Boolean - Whether to fill the dataset with a colour
+            datasetFill : true,
+
+            //String - A legend template
+            legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+
+            };
+
+      window.myLineChart = new Chart(document.getElementById("myChart_k").getContext("2d")).Line(data,options);
+})
+</script>
+<script type="text/javascript">
+  $(function(){
+
+  var data = {
+      labels: ["January", "February", "March", "April", "May", "June", "June"],
+            datasets: [
+            {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0)",
+            strokeColor: "rgba(220,220,220,1)",//线
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [165, 5, 80, 1, 56, 55,90]
+            },
+            {
+            label: "My Second dataset",
+            fillColor: "rgba(151,187,205,0)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            data: [28, 1, 40, 19, 86, 27,70]
+            }
+            ]
+            };
+
+  var options = {
+
+            //Boolean - If we should show the scale at all
+            showScale: false,
+            //Boolean - whether to make the chart responsive to window resizing
+            responsive: false,
+            ///Boolean - Whether grid lines are shown across the chart
+            scaleShowGridLines : true,
+
+            //String - Colour of the grid lines
+            scaleGridLineColor : "rgba(0,0,0,.05)",
+
+            //Number - Width of the grid lines
+            scaleGridLineWidth : 1,
+
+            //Boolean - Whether to show horizontal lines (except X axis)
+            scaleShowHorizontalLines: true,
+
+            //Boolean - Whether to show vertical lines (except Y axis)
+            scaleShowVerticalLines: true,
+
+            //Boolean - Whether the line is curved between points
+            bezierCurve : true,
+
+            //Number - Tension of the bezier curve between points
+            bezierCurveTension : 0,//0.4k线的弧度
+
+            //Boolean - Whether to show a dot for each point
+            pointDot : true,
+
+            //Number - Radius of each point dot in pixels断点圆圈的大小
+            pointDotRadius : 2,
+
+            //Number - Pixel width of point dot stroke 折线的缩放（具体没懂，反正能调整为我想要的）
+            pointDotStrokeWidth : 3,
+
+            //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+            pointHitDetectionRadius : 20,
+
+            //Boolean - Whether to show a stroke for datasets
+            datasetStroke : true,
+
+            //Number - Pixel width of dataset stroke
+            datasetStrokeWidth : 2,
+
+            //Boolean - Whether to fill the dataset with a colour
+            datasetFill : true,
+
+            //String - A legend template
+            legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+
+            };
+
+      window.myLineChart = new Chart(document.getElementById("myChart_k02").getContext("2d")).Line(data,options);
+
+      //  {
+      //       scales: {
+      //           xAxes: [{
+      //               display: false
+      //                 }]
+      //               }
+      // }
+  })
+</script>
+
+<script type="text/javascript">
+  $(function(){
+    var oHeight=$(window).height();
+    var oW = $(window).width();
+    if(oW<=320){
+      $(".chartTxt").css("fontSize","12px");
+    }
+    $(".newBox").css("height",oHeight+"px");
+    $(".thirdIndex .pmWrap").click(function(){
+      $(".thirdIndex").css({ "WebkitTransform": "translate(0px, " + (-oHeight) + "px)", "WebkitTransition": "1s all ease" });
+      $(".botNav").fadeIn("slow");
+    })
+
+    $(".botNav").click(function(){
+      $(this).hide("slow");
+      $(".thirdIndex").css({ "WebkitTransform": "translate(0px, 0px)", "WebkitTransition": "1s all ease" });
+    })
+  })
+</script>
+<script type="text/javascript">
+  $(".myChart_k01,.myChart_k02").attr("width",($(window).width())*0.85);
+</script>

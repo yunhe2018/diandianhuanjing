@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html style="height:100%; background:#f8f8f8;">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>diandian</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="js/swiper/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+<style>
+</style>
+</head> 
+<body style="height:100%; background:#f8f8f8;">
+
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="goods-info">
+        <h1><a href="#">海麟娃 原味脆虾20g/袋*9+香辣脆虾20g/袋*9</a></h1>
+        <p>
+            <i class="f18">253</i>
+            <i class="f12">炭币</i>
+            <em class="live-status">剩余6件</em>
+        </p>
+        <span class="tip">本商品由xx公司提供，兑换成功后将在10天内发货；且包邮</span>
+    </div>
+    <div class="orderWrap">
+        <div class="num">购买数量
+            <div class="bnum fr">
+                <a class="btn-minus num-01">减一</a>
+                <input type="text" value="1">
+                <a class="btn-add">加一</a>
+            </div>
+        </div>
+    </div>
+    <div class="space"></div>
+    <div class="good_detail">
+        <h2 class="good_detail_h2"><span>商品详情</span></h2>
+        <div class="good_detail_img"><img src="img/default/pic_default_big_1.png"></div>
+    </div>
+    <div class="bottBtnWrap">
+        <div class="bottBtn">
+            <div class="chongBtn">您的余额不足，充值后可兑换此商品哦~<span>去充值</span></div>
+            <div class="totalPrice">
+                <div class="serverWrap">
+                    <img src="img/server.png">
+                    <a href=""></a>
+                    <a href=""></a>
+                </div>
+                <span class="confirmBtn pre">立即兑换</span>
+            </div>
+        </div>
+    </div>
+<script src="js/jquery-2.1.4-min.js"></script>
+<script src="js/swiper/js/swiper.min.js"></script>
+<script>
+$(function(){
+    //...........
+    var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false
+    });
+})
+</script>
+</body>
+</html>

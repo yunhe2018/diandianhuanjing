@@ -1,0 +1,24 @@
+@charset "UTF-8";
+.middle_content ul li{
+    padding-left: 0.3125rem;
+    padding-right: 0.3125rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    background: #fffdfd;
+    border-bottom: 1px solid #eaeaea;
+}
+
+i{
+    display: inline-block;
+    float: right;
+    margin-top: .5rem;
+    width: 0.234rem;
+    height: .41rem;
+    background: url("../images/zhifujiantouright.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.banquan{
+    margin-top: 1rem;
+    border-top: 1px solid #eaeaea;
+}

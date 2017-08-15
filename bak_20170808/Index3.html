@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点点环境-首页</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <meta property="wb:webmaster" content="b97e9eb0fa0c90be" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mwtIbCVKxq5l7TMLCpNrCnoOxGnWlotK"></script>
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body>
+    <div class="map-for-location" id="allmap"></div>
+    <div class="indexBox" >
+        <div class="weather clearfix" id="div_weather" style="display:none">
+            <span class="pic fl"></span>
+            <span class="txt fl" id="span_temp"></span>
+        </div>
+        <div class="lt_date" id="lt_date" style="display:none">
+            <div class="zuji" id="div_zuji">
+                <span class="pic fl" id="div_step"></span>
+                <span class="txt fl" id="span_step"></span>
+            </div>
+            <div class="zuji" id="div_tb">
+                <span class="tanbi fl" id="div_carbon"></span>
+                <span class="txt fl" id="span_tb"></span>
+            </div>
+        </div>
+            <div class="updateOrCore">
+                <span class="back" id="span_back"></span>
+                <span class="update" id="span_update"></span>
+                <span class="core" id="span_core"></span>
+            </div>
+            <div class="lt_date">
+                <!--<div class="loupan" id="loupan"></div>-->
+                <!--<div class="zuji" id="wode" style="display:none">
+                    <span class="pic fl" id="div_step"></span>
+                    <span class="txt fl" id="span_step">我的</span>
+                </div>-->
+                <div class="zuji" id="loupan">
+                    <span class="tanbi fl" id="div_carbon"></span>
+                    <span class="txt fl" id="span_tb">查看周边楼盘</span>
+                </div>
+            </div>
+            <!--ul class="topMenu">
+                <li id="wode" style="padding: .05rem; border-radius: .4rem; ">
+                    <div class="pic"></div>
+                    <p class="txt">我的</p>
+                </li>
+                <li id="loupan" style="padding: .05rem; border-radius: .4rem; ">
+                    <div class="pic"></div>
+                    <p class="txt">楼盘</p>
+                </li>
+                <li id="buy" style="display:none;padding: .05rem; border-radius: .4rem; ">
+                    <div class="pic"></div>
+                    <p class="txt">报告</p>
+                </li>
+                <li id="center">
+                <div class="pic"></div>
+                <p class="txt">中心</p>
+            </li>
+            </ul>-->
+            <b class="bigcart"></b>
+            <span class="position_curr" style="display:none">当前位置<i></i></span>
+            
+    </div>
+    <div class="thirdIndex">
+        <!--底部环境评分和位置定位-->
+        <!--<div class="pmWrap pmWrap-good no clearfix">
+            <span class="slide"></span>
+            <div class="pm bad fl" id="div_score"><p>环境质量评分：</p>22<span>分</span></div>
+            <div class="address fl">
+                <p id="p_PositionName">东城区中华路甲10号</p>
+                <div class="clearfix">
+                    <span class="pic fl" id="div_level"><img id="" src="img/bad.png"> </span>
+                    <span class="txt fl" id="div_upper">环境质量差，一项或多项环境指标严重不达标。更多详情，请购买环境质量报告。</span>
+                </div>
+            </div>
+        </div>-->
+        <div class="pmWrap pmWrap-good no clearfix" id="div_pmwrap">
+            <span class="slide"></span>
+            <div class="pm good fl" id="div_score"></div>
+            <div class="address fl">
+                <p id="p_PositionName"></p>
+                <div class="clearfix">
+                    <span class="pic fl" id="div_level"></span>
+                    <span class="txt fl" id="div_upper"></span>
+                </div>
+            </div>
+        </div>
+        <!--end-->
+        <!--新首页上滑-->
+        <div class="newBox">
+            <div class="header">
+                <span class="back" id="add_btn"></span>
+                <span class="txt" id="span_PositionName"></span>
+                <span class="operat" style="display:none">...</span>
+            </div>
+
+            <div class="general clearfix">
+                <div class="score">
+                    <img src="img/general.png">
+                    <div class="pm" id="div_score_general"></div>
+                    <span class="pic fl" id="div_level_general"><img src="img/bad.png"> </span>
+                    <div class="weather_02 clearfix">
+                        <span class="pic02 fl" id="span_weather_icon_1" style="display:none"></span>
+                        <span class="pic02 fl" id="span_weather_icon_2" style="display:none"></span>
+                        <span class="txt fl" id="span_general"></span>
+                    </div>
+                </div>
+                <!--绘制雷达图-->
+                <div class="chartWrap">
+                    <div class="chartPic"><canvas id="myChart" width="100%" height="100%"></canvas></div>
+                    <div class="chartTxt" id="div_chart_info">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="general clearfix">
+                <div class="score">
+                    <img class="numbImg" src="img/numb.png">
+                    <ul class="pollute clearfix" id="ul_DetailList"></ul>
+                </div>
+            </div>
+            <!--单条折线图-->
+            <div class="kLine">
+                <img class="numbImg" src="img/trend.png">
+                <h1 class="kLine_h1">空气污染</h1>
+                <div class="checksWrap">
+                    <ul class="checks" id="ul_week_kline">
+                    </ul>
+                    <div class="myChart_k01" id="myChart_k" width="320" height="110"></div>
+                </div>
+                <div class="mask"></div>
+            </div>
+            <!--end-->
+
+            <!--双条折线图-->
+            <div class="kLine">
+                <h1 class="kLine_h1 kLine_h2">未来七天天气预报</h1>
+                <div class="checksWrap">
+                    <ul class="week" id="ul_week_kline_7"></ul>
+                    <ul class="checks checks02" id="ul_week_night_7">
+                    </ul>
+                    <div class="myChart_k02" id="myChart_k_wearher" width="320" height="300"></div>
+                </div>
+                <div class="mask" style="display:block"></div>
+            </div>
+            <!--end-->
+            <div class="detailsWrap" style="background:none">
+                <h3 style="color:#fff">附近楼盘环境数据<span id="span_more" style="color:#fff">查看更多地图</span></h3>
+                <span class="seeList" id="span_ProjectList"><i style="border: 1px solid #fff;color:#fff;font-size:10px">查看附近楼盘</i></span>
+                <ul class="details" id="ul_tjlist"></ul>
+            </div>
+            <div class="" style="height:70px"></div>
+        </div>
+    </div>
+    <ul class="botNav" style="display:none" id="ul_footerMenu">
+    </ul>
+    <div class="secondIndex" style="display:none">
+        <div class="kongSpace" style="height:.45rem; display: none;"></div>
+        <div class="header">
+            <span class="back" id="add_btn"></span>
+            <span class="txt" id="span_PositionName"></span>
+            <span class="operat" style="display:none">...</span>
+        </div>
+
+
+
+        <div class="indexBox">
+
+            <ul class="pollute clearfix" id="ul_DetailList"></ul>
+            <div class="space"></div>
+            <div class="AQI_record">
+                <h3>历史七天AQI记录</h3>
+                <ul class="week_pull clearfix" id="ul_week">
+                </ul>
+            </div>
+            <div class="space"></div>
+            <div class="detailsWrap">
+                <h3>附近楼盘环境数据<span id="span_more">查看更多地图</span></h3>
+                <span class="seeList" id="span_ProjectList"><i  style="border: 1px solid #fff;color:#fff;">查看附近楼盘</i></span>
+                <ul class="details" id="ul_tjlist">
+                    <!--<li>
+                        <a class="clearfix" href="javascript:;">
+                            <div class="pic fl"><img src="img/zuji.png"></div>
+                            <div class="con fl">
+                                <h4>欧陆经典<span>5km以内</span></h4>
+                                <p>综合评分: <span>630</span></p>
+                                <span class="bad">较差</span>
+                            </div>
+                            <b class="lookD">查看详情</b>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="clearfix" href="javascript:;">
+                            <div class="pic fl"><img src="img/zuji.png"></div>
+                            <div class="con fl">
+                                <h4>欧陆经典<span>5km以内</span></h4>
+                                <p>综合评分: <span>630</span></p>
+                                <span class="good">较差</span>
+                            </div>
+                            <b class="lookD">查看详情</b>
+                        </a>
+                    </li>-->
+                </ul>
+            </div>
+            <div class="space"></div>
+        </div>
+    </div>
+    <div class="APIdialog thirdIndexAPIdialog" id="div_AQI" style="display:none">
+       
+        
+    </div>
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/g_footer.js", "/js/index1.js", "/js/Chart.js", "/js/ichart.1.2.min.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>
+<script>
+    $(function(){
+        
+    })
+</script>
+

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>点点环境-首页</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <meta property="wb:webmaster" content="b97e9eb0fa0c90be" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mwtIbCVKxq5l7TMLCpNrCnoOxGnWlotK"></script>
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body>
+    <div class="map-for-location" id="allmap"></div>
+    <div class="header02">
+        <b class="back" id="add_btn"></b>
+        <span class="txt" id="span_currname"></span>
+        <b class="search" id="btnSearch"></b>
+    </div>
+    <div class="indexBox">
+        <div class="weather clearfix" id="div_weather" style="display:none">
+            <span class="pic fl"></span>
+            <span class="txt fl" id="span_temp"></span>
+        </div>
+        <div class="lt_date" id="lt_date" style="display:none">
+            <div class="zuji" id="div_zuji">
+                <span class="pic fl" id="div_step"></span>
+                <span class="txt fl" id="span_step"></span>
+            </div>
+            <div class="zuji" id="div_tb">
+                <span class="tanbi fl" id="div_carbon"></span>
+                <span class="txt fl" id="span_tb"></span>
+            </div>
+        </div>
+        <div class="updateOrCore">
+            <span class="back" id="span_back" style="display:none"></span>
+            <span class="update" id="span_update"></span>
+            <span class="core" id="span_core"></span>
+        </div>
+        <div class="lt_date">
+            <div class="zuji" id="loupan">
+                <span class="tanbi fl" id="div_carbon"></span>
+                <span class="txt fl" id="span_tb">查看周边楼盘</span>
+            </div>
+        </div>
+
+        <b class="bigcart"></b>
+        <span class="position_curr" style="display:none">当前位置<i></i></span>
+    </div>
+    <div class="posDialog" id="div_project" style="display:none">
+        <div id="div_position_level"></div>
+        <div class="con" id="div_position">
+            <h3 class="name" id="h_projectname"></h3>
+            <p class="txt">环境质量评分：<span id="span_score"></span></p>
+            <b class="goto"></b>
+        </div>
+        <div class="add" id="btnaddressinsert" style="display:none"><span>+</span>添加此地址</div>
+        <div class="add" id="btnaddressdelete" style="display:none"><span>-</span>删除此地址</div>
+    </div>
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/g_footer.js", "/js/indexmap.js", "/js/Chart.js", "/js/ichart.1.2.min.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>

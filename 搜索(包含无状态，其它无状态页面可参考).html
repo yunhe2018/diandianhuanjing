@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en" style="height:100%; background:#fff;">
+<head>
+    <meta charset="UTF-8">
+    <title>惠家有购物商城</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <script type="text/javascript" src="js/jquery-2.1.4-min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body style="height:100%;">
+<div>
+    <div class="header04Wrap">
+        <div class="header04">
+            <b class="back"></b>
+            <div class="in">
+                <span class="header_city">北京</span>
+                <b class="serchImg"></b>
+                <b class="close"></b>
+                <input type="text" placeholder="搜楼盘、查报告" />
+            </div>
+            <b class="serchText">搜索</b>
+        </div>
+    </div>
+    <h2 class="header_search">热搜</h2>
+    <ul class="columnList searchbox clearfix">
+            <li>定位</li>
+            <li>苏州</li>
+            <li>哈尔滨</li>
+            <li>苏州</li>
+            <li style="font-size: 0.13rem;">锡林郭勒</li>
+            <li>苏州</li>
+            <li style="font-size: 0.13rem;">锡林郭勒</li>
+            <li>苏州</li>
+            <li style="font-size: 0.13rem;">锡林郭勒</li>
+            <li>苏州</li>
+            <li>苏州</li>
+            <li style="font-size: 0.13rem;">锡林郭勒</li>
+            <li>苏州</li>
+    </ul>
+    <h2 class="header_search">热搜<span class="delete"></span></h2>
+    <ul class="searchHistory">
+        <li>
+            <p>谁知道呢</p>
+            <span>北京市 重阳去管去路12323号</span>
+        </li>
+        <li>
+            <p>谁知道呢</p>
+            <span>北京市 重阳去管去路12323号</span>
+        </li>
+        <li>
+            <p>谁知道呢</p>
+            <span>北京市 重阳去管去路12323号</span>
+        </li>
+        <li>
+            <p>谁知道呢</p>
+            <span>北京市 重阳去管去路12323号</span>
+        </li>
+    </ul>
+    <b class="lookMoreComment">清除历史记录</b>
+    <div class="botNavWrap">
+        <ul class="botNav">
+            <li>
+                <span>首页</span>
+            </li>
+            <li>
+                <span>楼盘</span>
+            </li>
+            <li>
+                <span>购物车</span>
+            </li>
+            <li>
+                <span>我的</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--无状态-->
+<div class="wuState" style="display:none;">
+    <img src="img/wu/icon_noSearch.png">
+    <p>没有搜到结果，请重新搜索哦~</p>
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        $(".columnList li").each(function(){
+            if($(this).text().length>3){
+                $(this).css("fontSize",".13rem")
+            }
+        })
+        
+    })
+</script>

@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+            WriteStatic(staticlist);
+    </script>
+    <script>
+        if (IsInWeiXin.check()) {
+            $.each(g_const_OrderConfirmRefer, function (k, o) {
+                if (document.referrer.toLowerCase().indexOf(o) > -1) {
+                    var wxUrl = g_const_PageURL.MyOrder_List + "?t=" + Math.random() + "&showwxpaytitle=1";
+                    WxInfo.GetPayID(wxUrl);
+                }
+            });
+        }
+    </script>
+</head>
+<body style="background: #f8f8f8">
+    <input id="hid_uid" type="hidden" />
+    <!--top-->
+    <div class="headerSpace"></div>
+    <div class="header02">
+        <b class="back" id="btnBack"></b>
+        <span class="txt nopic" id="span_status"></span>
+        <!--<b class="information"></b>
+        <b class="search"></b>-->
+    </div>
+    <!--<div class="top">
+        <header>
+            <div class="top_content">
+                <a ><img src="images/jiantouWhite.png" alt="" /></a>
+                <span id="span_status"></span>
+            </div>
+        </header>
+    </div>-->
+    <!--top end-->
+    <!--content-->
+    <div class="indexBox">
+        <div class="detailsWrap pubList">
+            <ul class="details" id="ul_orderlist">
+                <!--<li>
+                    <a class="clearfix" href="javascript:;">
+                        <div class="con">
+                            <h4>欧陆经典</h4>
+                            <p class="title02">综合评分</p>
+                            <div class="price02">￥500.00</div>
+                        </div>
+                        <span class="pay">支付</span>
+                        <span class="waitPay">等待付款</span>
+                        <span class="orderstate_complet"></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="clearfix" href="javascript:;">
+                        <div class="con">
+                            <h4>欧陆经典</h4>
+                            <p class="title02">综合评分</p>
+                            <div class="price02">￥500.00</div>
+                        </div>
+                        <span class="pay">支付</span>
+                        <span class="waitPay">等待付款</span>
+                        <span class="orderstate_expired"></span>
+                    </a>
+                </li>-->
+            </ul>
+            <p class="orderCount" id="p_listcount"></p>
+        </div>
+
+
+    </div>
+    <!--content end-->
+</body>
+<script type="text/javascript">
+    var staticlist = [[], ["/js/tost.js", "/js/JValidator.js", "/js/g_app.js", "/js/orderlist.js"]];
+    WriteStatic(staticlist);
+</script>
+</html>

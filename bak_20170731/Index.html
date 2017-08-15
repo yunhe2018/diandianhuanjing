@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>点点环境-天气信息</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mwtIbCVKxq5l7TMLCpNrCnoOxGnWlotK"></script>
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body>
+    <div class="rt_date">
+        <div class="loupan" id="loupan" style="display:none"></div>
+    </div>
+    <div class="bigPicBox">
+        <img class="bigPic" src="" id="bg_img">
+        <div class="header header6">
+            <span class="pluse">+</span>
+            <span class="txt" id="i_city"></span>
+            <span class="operat" style="display:none">...</span>
+        </div>
+        <div class="pzsNum"><ul><li class="curr"></li><li></li><li></li></ul></div>
+        <div class="today" id="span_date"></div>
+        <div class="boxWrap">
+            <canvas id="c1" width="300" height="300"></canvas>
+            <span class="score">环境质量综合评分</span>
+            <span class="score_num" id="span_score"></span>
+            <span class="score_detail" id="span_weather"></span>
+            <div class="wea_data_wrap">
+                <span class="wea_data" id="span_overarea">
+                    <b id="b_overarea"></b>
+                    <i class="point_01" style="display: block;">.</i>
+                    <i class="point_02" style="display: block;">.</i>
+                    <i class="point_03" style="display: block;">.</i>
+                    <i class="point_04" style="display: block;"></i>
+                </span>
+            </div>
+            <div class="degree">
+                <span class="degree_good">优</span>
+                <span class="degree_liang">良</span>
+                <span class="degree_bad">差</span>
+            </div>
+        </div>
+        <div class="todayStatusWrap">
+            <span class="time" id="span_updatetime"></span>
+            <h1>今日节能减排状况</h1>
+            <ul class="clearfix">
+                <li>
+                    <span>13425</span>
+                    <span class="name">步数/步</span>
+                </li>
+                <li>=</li>
+                <li>
+                    <span>13425</span>
+                    <span class="name">CO2减排量/克</span>
+                </li>
+                <li>=</li>
+                <li>
+                    <span>13425</span>
+                    <span class="name">获取点点币/个</span>
+                </li>
+            </ul>
+        </div>
+        </div>
+    <ul class="botNav" id="ul_footerMenu"></ul>
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/weather.js", "/js/g_footer.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>

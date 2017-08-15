@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>点点环境-天气信息</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ">
+   <link rel="stylesheet" type="text/css" href="css/base.css">
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="header03">
+        <!--span class="back" id="back_btn"></span-->
+        <i id="i_city">北京市</i>
+    </div>
+    <div class="bigPicBox">
+        <img class="bigPic" src="img/bigPic_02.jpg">
+        <!--div class="weather clearfix">
+            <span class="pic fl"><img src="img/good.png"></span>
+            <<span class="txt fl" id="span_level"></span>>
+        </div-->
+        <span class="date" id="span_date">2016.12.27　星期二 平安圣诞夜<i>丙申年冬月二十六</i></span>
+        <span class="score">环境综合评分</span>
+		<div class="score_wrap">
+			<span class="score_num pm yiban" id="span_score">67</span>
+			<div class="wea_data">
+				<img src="img/wea_good.png">
+				<i class="point_01">.</i>
+				<i class="point_02">.</i>
+				<i class="point_03">.</i>
+				<i class="point_04"></i>
+			</div>
+		</div>
+        
+        <!--span class="tianqi" id="span_weather">晴转多云 南风微风 -7°/2°</span-->
+        <!--div class="bottomTip">
+            <p id="p_tiptitle">天气冷，建议着棉服、羽绒服、皮夹克加羊毛衫等冬季服装。年老体弱者宜着厚棉衣、冬大衣或厚羽绒服。</p>
+            <p> 更多详细数据请下载 <a id="a_report">楼盘环境报告</a></p>
+        </div-->
+        <!--div class="jb"></div-->
+        <ul class="zong_botm">
+        	<li>
+            	<p>温度：-2℃</p>
+            	<p>湿度：-2℃</p>
+            	<p>气压：-2℃</p>
+            </li>
+        	<li>
+            	<p>低碳里程</p>
+            	<p><span class="stepCount">2888</span><b class="stepCon">步</b></p>
+            	<p><span class="lookDetal">查看详情</span></p>
+            </li>
+        	<li>
+            	<p>玩转碳币</p>
+            	<p><span class="stepCount">2888</span><b class="stepCon">币</b></p>
+            	<p><span class="lookDetal">查看详情</span></p>
+            </li>
+        </ul>
+    </div>
+
+</body>
+<script src="js/jquery-2.1.4-min.js"></script>
+<script>
+$(function(){
+	var count=0;
+	var timer;
+	$(".wea_data i").hide();
+	timer=setInterval(function(){
+		$(".wea_data i").eq(count).show();
+		count++;
+		if(count==5){
+			count=0;
+			$(".wea_data i").hide();
+		}
+	},210);
+	
+})
+</script>
+</html>

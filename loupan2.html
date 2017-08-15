@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点点环境-楼盘排行</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mwtIbCVKxq5l7TMLCpNrCnoOxGnWlotK"></script>
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js", "/js/InfoBox.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body>
+    <div class="map-for-location marginTop" id="allmap" style="display:none"></div>
+
+    <div class="headerSpace"></div>
+    <div class="header02">
+        <b class="back" id="btnback"></b>
+        <span class="txt nopic">楼盘排行</span>
+    </div>
+    <div class="paihangWrap">
+        <!-- <ul class="clearfix" id="ul_type">
+            <li onclick="Project.SetType('month',this)">月份</li>
+            <li onclick="Project.SetType('quarter', this)">季度</li>
+            <li onclick="Project.SetType('year', this)">年度</li>
+        </ul> -->
+        <div class="orderMenu">
+            <ul id="ul_type">
+                <li onclick="Project.SetType('month',this)"><span>月份</span></li>
+                <li onclick="Project.SetType('quarter', this)"><span>季度</span></li>
+                <li onclick="Project.SetType('year', this)" class="curr"><span>年度</span></li>
+            </ul>
+        </div>
+        <!-- <div class="searchTime clearfix">
+            <select class="year" id="txtYear">
+                <option value="2022">2022年</option>
+                <option value="2021">2021年</option>
+                <option value="2020">2020年</option>
+                <option value="2019">2019年</option>
+                <option value="2018">2018年</option>
+                <option value="2017" selected>2017年</option>
+            </select>
+            <select id="selMonth" class="month">
+                <option value="01">1月</option>
+                <option value="02">2月</option>
+                <option value="03">3月</option>
+                <option value="04">4月</option>
+                <option value="05">5月</option>
+                <option value="06">6月</option>
+                <option value="07">7月</option>
+                <option value="08">8月</option>
+                <option value="09">9月</option>
+                <option value="10">10月</option>
+                <option value="11">11月</option>
+                <option value="12">12月</option>
+            </select>
+            <span class="btn" id="btnSearch" style="display:none">确定</span>
+        </div> -->
+        <div class="searchTime02 clearfix">
+            <span><i class="time01"></i>2017/08<i class="time02"></i></span>
+        </div>
+        <!--日期弹框-->
+        <div class="dateDialog">
+            <ul class="dateList clearfix">
+                <li>01-03月</li>
+                <li>01-03月</li>
+                <li class="curr">01-03月</li>
+                <li>01-03月</li>
+                <li>01-03月</li>
+                <li>01-03月</li>
+                <li>01-03月</li>
+                <li>01-03月</li>
+            </ul>
+            <h2>2017年</h2>
+            <ul class="dateList clearfix">
+                <li>01-03月</li>
+                <li>01-03月</li>
+                <li class="curr">01-03月</li>
+                <li>01-03月</li>
+                <li>01-03月</li>
+                <li>01-03月</li>
+                <li>01-03月</li>
+                <li>01-03月</li>
+            </ul>
+        </div>
+        <!--日期弹框end-->
+        </div>
+            <!--老版-->
+            <!-- <div class="detailsWrap d_list" id="div_list">
+                <ul class="details" id="ul_list"></ul>
+            </div> -->
+            <!--新版-->
+            <div class="detailsWrap">
+                <ul class="details paihang" id="">
+                    <li>
+                        <a class="clearfix" href="javascript:;">
+                            <div class="pic fl"><img src="img/zuji.png"></div>
+                            <div class="con fl">
+                                <h4>欧陆经典</h4>
+                                <p class="rcd_ads">朝阳北路与传媒大学交界路口</p>
+                                <div class="price02">平均分：<span class="big">55.9</span></div>
+                            </div>
+                        </a>
+                        <div class="num"><img src="img/paihang_num01.png"></div>
+                    </li>
+                    <li>
+                        <a class="clearfix" href="javascript:;">
+                            <div class="pic fl"><img src="img/zuji.png"></div>
+                            <div class="con fl">
+                                <h4>欧陆经典</h4>
+                                <p class="rcd_ads">朝阳北路与传媒大学交界路口</p>
+                                <div class="price02">平均分：<span class="big">55.9</span></div>
+                            </div>
+                        </a>
+                        <div class="num"><img src="img/paihang_num02.png"></div>
+                    </li>
+                    <li>
+                        <a class="clearfix" href="javascript:;">
+                            <div class="pic fl"><img src="img/zuji.png"></div>
+                            <div class="con fl">
+                                <h4>欧陆经典</h4>
+                                <p class="rcd_ads">朝阳北路与传媒大学交界路口</p>
+                                <div class="price02">平均分：<span class="big">55.9</span></div>
+                            </div>
+                        </a>
+                        <div class="num"><img src="img/paihang_num03.png"></div>
+                    </li>
+                    <li>
+                        <a class="clearfix" href="javascript:;">
+                            <div class="pic fl"><img src="img/zuji.png"></div>
+                            <div class="con fl">
+                                <h4>欧陆经典</h4>
+                                <p class="rcd_ads">朝阳北路与传媒大学交界路口</p>
+                                <div class="price02">平均分：<span class="big">55.9</span></div>
+                            </div>
+                        </a>
+                        <div class="num">4</div>
+                    </li>
+                </ul>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="botNavWrap">
+                <ul class="botNav" id="ul_footerMenu"></ul>
+            </div>
+        <script type="text/javascript">
+            var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/g_footer.js", "/js/loupan2.js"]];
+            WriteStatic(staticlist);
+        </script>
+</body>
+</html>
+

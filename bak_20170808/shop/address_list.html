@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>diandian</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css", "/js/swiper/css/swiper.min.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body style="height:100%; background:#f8f8f8;">
+    <div class="headerSpace"></div>
+    <div class="header02">
+        <b class="back" id="back_btn"></b>
+        <span class="txt nopic">地址管理</span>
+    </div>
+    <div id="addresslist">
+        <!--
+        <div class="addressWrap">
+            <div class="address" style="" id="divAddressLogin">
+                <div>
+                    <p class="address-t"><span class="name"><span id="spaddressuser">华玉二</span></span><span class="phone"><span id="spaddressphone">18235181785</span></span></p>
+                    <p><span id="spaddressdetail">河北省石家庄市长安区的费大幅度的方法的范德萨</span></p>
+                </div>
+            </div>
+            <div class="setDefaultAddress addressManage">
+                <span class="act"></span>
+                <label>设置为默认地址</label>
+                <b class="delete">删除</b>
+                <b class="edit">编辑</b>
+            </div>
+        </div>
+
+
+        <div class="addressWrap">
+            <div class="address" style="" id="divAddressLogin">
+                <div>
+                    <p class="address-t"><span class="name"><span id="spaddressuser">华玉二</span></span><span class="phone"><span id="spaddressphone">18235181785</span></span></p>
+                    <p><span id="spaddressdetail">河北省石家庄市长安区的费大幅度的方法的范德萨</span></p>
+                </div>
+            </div>
+            <div class="setDefaultAddress addressManage">
+                <span class=""></span>
+                <label>设置为默认地址</label>
+                <b class="delete">删除</b>
+                <b class="edit">编辑</b>
+            </div>
+        </div>
+
+
+        <div class="addressWrap">
+            <div class="address" style="" id="divAddressLogin">
+                <div>
+                    <p class="address-t"><span class="name"><span id="spaddressuser">华玉二</span></span><span class="phone"><span id="spaddressphone">18235181785</span></span></p>
+                    <p><span id="spaddressdetail">河北省石家庄市长安区的费大幅度的方法的范德萨</span></p>
+                </div>
+            </div>
+            <div class="setDefaultAddress addressManage">
+                <span class=""></span>
+                <label>设置为默认地址</label>
+                <b class="delete">删除</b>
+                <b class="edit">编辑</b>
+            </div>
+        </div>
+        -->
+    </div>
+    <div class="newAddresssStoreBtn" id="newAddress">添加新地址</div>
+
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/g_footer.js", "/js/shop/address_list.js", "/js/Chart.js", "/js/ichart.1.2.min.js"]];
+            WriteStatic(staticlist);
+    </script>
+    <script>
+        $(document).on('touchmove',function(e) {
+            var e = e || event;
+            e.preventDefault();
+        })
+        var myscroll = new IScroll("#wrapper01", {
+            scrollX: false, scrollY: true, mouseWheel: true, preventDefault: false
+        });
+        var myscroll = new IScroll("#wrapper02", {
+            scrollX: false, scrollY: true, mouseWheel: true, preventDefault: false
+        });
+        var myscroll = new IScroll("#wrapper03", {
+            scrollX: false, scrollY: true, mouseWheel: true, preventDefault: false
+        });
+    </script>
+
+</body>
+
+</html>

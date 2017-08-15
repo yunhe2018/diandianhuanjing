@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html style="height:100%; background:#fff;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>碳交易-委托买入</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/ichart.1.2.min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="topBoxWrap">
+        <div class="headerSpace"></div>
+        <div class="header02">
+            <b class="back" id="btnback"></b>
+            <span class="txt nopic">委托买入</span>
+            <b class="add" id="" style="display:none"></b>
+        </div>
+        <div class="detailWrap clearfix">
+            <div class="detail-left">
+                <!--<div class="detail-tr clearfix">
+                    <label>账号</label>
+                    <span>沪A-E005378</span>
+                </div>-->
+                <!--<div class="detail-tr">
+                    <label class="la_02">代码</label>
+                    <input class="num" type="text" value="239005378" />
+                    <b class="close"></b>
+                </div>-->
+                <ul class="detail-sell clearfix" id="ul_city">
+                </ul>
+                <div class="detail-tr clearfix">
+                    <label>价格</label>
+                    <span id="span_Price"></span>
+                </div>
+                <div class="detail-tr clearfix">
+                    <label>可买</label>
+                    <span id="span_Amount"></span>
+                </div>
+                <div class="detail-tr">
+                    <label class="la_02">数量</label>
+                    <input class="num" type="number" value="" id="txt_Amount" />
+                </div>
+                <div class="detail-sellBtn" id="btnbuy">买入</div>
+            </div>
+            <div class="detail-right">
+                <ul class="clearfix">
+                    <li>
+                        <label>卖五</label>
+                        <span id="span_sell_price5">--</span>
+                        <span id="span_sell_amount5">--</span>
+                    </li>
+                    <li>
+                        <label>卖四</label>
+                        <span id="span_sell_price4">--</span>
+                        <span id="span_sell_amount4">--</span>
+                    </li>
+                    <li>
+                        <label>卖三</label>
+                        <span id="span_sell_price3">--</span>
+                        <span id="span_sell_amount3">--</span>
+                    </li>
+                    <li>
+                        <label>卖二</label>
+                        <span id="span_sell_price2">--</span>
+                        <span id="span_sell_amount2">--</span>
+                    </li>
+                    <li>
+                        <label>卖一</label>
+                        <span id="span_sell_price1">--</span>
+                        <span id="span_sell_amount1">--</span>
+                    </li>
+                </ul>
+                <ul class="clearfix">
+                    <li>
+                        <label>买一</label>
+                        <span id="span_buy_price1">--</span>
+                        <span id="span_buy_amount1">--</span>
+                    </li>
+                    <li>
+                        <label>买二</label>
+                        <span id="span_buy_price2">--</span>
+                        <span id="span_buy_amount2">--</span>
+                    </li>
+                    <li>
+                        <label>买三</label>
+                        <span id="span_buy_price3">--</span>
+                        <span id="span_buy_amount3">--</span>
+                    </li>
+                    <li>
+                        <label>买四</label>
+                        <span id="span_buy_price4">--</span>
+                        <span id="span_buy_amount4">--</span>
+                    </li>
+                    <li>
+                        <label>买五</label>
+                        <span id="span_buy_price5">--</span>
+                        <span id="span_buy_amount5">--</span>
+                    </li>
+                </ul>
+                <ul class="clearfix">
+                    <li class="add">
+                        <label>涨停价</label>
+                        <span id="span_add">--</span>
+                    </li>
+                    <li class="stop">
+                        <label>跌停价</label>
+                        <span id="span_stop">--</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tbWrap">
+            <dl class="tb_five">
+                <dt>
+                    <span class="cel-12">名称</span>
+                    <span class="cel-23">持有量</span>
+                    <span class="cel-20">成本</span>
+                    <span class="cel-22">加仓</span>
+                    <span class="cel-22">减仓</span>
+                </dt>
+            </dl>
+        </div>
+        <!--底部交易列表-->
+        <div class="detail-table">
+            <div class="tbWrap">
+                <dl id="dl_balance" class="tb_five">
+                    <!--<dd>
+                        <span class="cel-33">银海集团<i>7869989</i></span>
+                        <span class="cel-33">卖出<i>已撤</i></span>
+                        <span class="cel-33">5511085<i>2000</i></span>
+                    </dd>
+                    <dd>
+                        <span class="cel-33">银海集团<i>7869989</i></span>
+                        <span class="cel-33">卖出<i>已撤</i></span>
+                        <span class="cel-33">5511085<i>2000</i></span>
+                    </dd>
+                    <dd class="co-red">
+                        <span class="cel-33">银海集团<i>7869989</i></span>
+                        <span class="cel-33">卖出<i>已撤</i></span>
+                        <span class="cel-33">5511085<i>2000</i></span>
+                    </dd>
+                    <dd>
+                        <span class="cel-33">银海集团<i>7869989</i></span>
+                        <span class="cel-33">卖出<i>已撤</i></span>
+                        <span class="cel-33">5511085<i>2000</i></span>
+                    </dd>
+                    <dd>
+                        <span class="cel-33">银海集团<i>7869989</i></span>
+                        <span class="cel-33">卖出<i>已撤</i></span>
+                        <span class="cel-33">5511085<i>2000</i></span>
+                    </dd>
+                    <dd class="co-red">
+                        <span class="cel-33">银海集团<i>7869989</i></span>
+                        <span class="cel-33">卖出<i>已撤</i></span>
+                        <span class="cel-33">5511085<i>2000</i></span>
+                    </dd>
+                    <dd>
+                        <span class="cel-33">银海集团<i>7869989</i></span>
+                        <span class="cel-33">卖出<i>已撤</i></span>
+                        <span class="cel-33">5511085<i>2000</i></span>
+                    </dd>
+                    <dd>
+                        <span class="cel-33">银海集团<i>7869989</i></span>
+                        <span class="cel-33">卖出<i>已撤</i></span>
+                        <span class="cel-33">5511085<i>2000</i></span>
+                    </dd>
+                    <dd class="co-red">
+                        <span class="cel-33">银海集团<i>7869989</i></span>
+                        <span class="cel-33">卖出<i>已撤</i></span>
+                        <span class="cel-33">5511085<i>2000</i></span>
+                    </dd>
+                    <dd>
+                        <span class="cel-33">银海集团<i>7869989</i></span>
+                        <span class="cel-33">卖出<i>已撤</i></span>
+                        <span class="cel-33">5511085<i>2000</i></span>
+                    </dd>
+                    <dd>
+                        <span class="cel-33">银海集团<i>7869989</i></span>
+                        <span class="cel-33">卖出<i>已撤</i></span>
+                        <span class="cel-33">5511085<i>2000</i></span>
+                    </dd>
+                    <dd class="co-red">
+                        <span class="cel-33">银海集团<i>7869989</i></span>
+                        <span class="cel-33">卖出<i>已撤</i></span>
+                        <span class="cel-33">5511085<i>2000</i></span>
+                    </dd>-->
+                </dl>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/iscroll.js", "/js/tradebuy.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>

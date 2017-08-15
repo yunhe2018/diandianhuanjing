@@ -1,0 +1,55 @@
+@charset "UTF-8";
+.genggaiyouxiang_content .img{
+    margin: 1.25rem auto 1.95rem;
+    width: 3.3rem;
+}
+
+.genggaiyouxiang_content .img img{
+    width: 3.3rem;
+}
+
+.genggaiyouxiang_content .email{
+   width: 100%;
+}
+
+.genggaiyouxiang_content .email ul{
+    margin: 0 auto 1.25rem;
+    width: 7.28rem;
+}
+
+.genggaiyouxiang_content .email li{
+    margin-bottom: 0.3125rem;
+    padding: 0.28rem 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.genggaiyouxiang_content .email li span{
+    display: inline-block;
+    margin-left: 0.375rem;
+    width: 1.875rem;
+    color: #999;
+    font-size: 0.1875rem;
+}
+
+.genggaiyouxiang_content .email li input{
+    outline: none;
+    background: none;
+    border: none;
+}
+
+.genggaiyouxiang_content .email .baocun{
+    margin: 0 auto;
+    width: 6.1rem;
+}
+
+.genggaiyouxiang_content .email .baocun input{
+    background: #18b6b9;
+    width: 6.1rem;
+    height: 0.9375rem;
+    line-height: 0.9375rem;
+    text-align: center;
+    color: #fff;
+    -moz-border-radius: .25rem; /* Firefox */
+    -webkit-border-radius:.25rem; /* Safari 和 Chrome */
+    border-radius: .25rem;
+}

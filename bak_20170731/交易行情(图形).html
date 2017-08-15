@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>点点环境-登录</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="telephone=no" name="format-detection">
+        <meta content="email=no" name="format-detection" />
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+        <script type="text/javascript">
+            // var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+            // WriteStatic(staticlist);
+        </script>
+        <link rel="stylesheet" type="text/css" href="css/base.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <input type="hidden" id="gobackurl" value="" />
+        <div class="headerSpace"></div>
+        <div class="header02">
+            <b class="back" id="btnback"></b>
+            <span class="txt nopic">行情图形</span>
+            <b class="bala" id="btnlist" style="display:none"></b>
+            <b class="TradeChartTool"></b>
+        </div>
+        
+        <div id="switch_nav" class="switch_nav">
+            <ul class="clearfix" id="ul_city" style="width: 480px; transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);"><li onclick="api_Request.GetList('aae0171545a30b490145a30bb34e0001',this)">上海</li><li onclick="api_Request.GetList('886d00c18d28401c85ac9979822abbd1',this)">福建</li><li onclick="api_Request.GetList('aae0171545a30b490145a30d53cf0002',this)">广东</li><li onclick="api_Request.GetList('aae0171545b0ad680145b0ad68ee0000',this)">天津</li><li onclick="api_Request.GetList('aae0171546b7de7e0146b7de7ec30000',this)">重庆</li><li onclick="api_Request.GetList('aae0171545b0ad680145b0adec280002',this)">湖北</li><li onclick="api_Request.GetList('aae0171545a30b490145a30b490a0000',this)">北京</li><li onclick="api_Request.GetList('aae0171545b0ad680145b0adbeaf0001',this)">深圳</li>
+            </ul>
+        </div>
+
+        <div class="tradeMark">
+            <ul class="tradeMarkTime"><li>1个月</li><li class="curr">3个月</li><li>6个月</li><li>1年</li></ul>
+            <ul class="roseTabel">
+                <li class="co_ff4416">
+                    <span class="txt">北京</span><span class="txt">涨幅：</span><span class="count co_ff4416">-2.35%</span>
+                </li>
+                <li class="co_009143">
+                    <span class="txt">市场均价</span><span class="txt">涨幅：</span><span class="count co_009143">-2.35%</span>
+                </li>
+            </ul>
+            <ul class="roseTabel curr">
+                <li class="co_ff4416">
+                    <span class="txt">北京</span><span class="txt">成交价：</span><span class="count">25.60</span>
+                </li>
+                <li class="co_009143">
+                    <span class="txt">市场均价</span><span class="txt">成交价：</span><span class="count">24.56</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tradeMark">
+            <ul class="roseTabel tabel_25">
+                <li class="co_ff4416">
+                    <span class="txt co_">北京</span>
+                </li>
+                <li class="co_ff4416">
+                    <span class="txt">天津</span>
+                </li>
+                <li class="co_05a1ff">
+                    <span class="txt">上海</span>
+                </li>
+                <li class="co_ffce08">
+                    <span class="txt">深圳</span>
+                </li>
+                <li class="co_ff66ff">
+                    <span class="txt">北京</span>
+                </li>
+                <li class="co_7958ba">
+                    <span class="txt">天津</span>
+                </li>
+                <li class="co_ffce08">
+                    <span class="txt">上海</span>
+                </li>
+                <li class="co_ff4416">
+                    <span class="txt">深圳</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="page_change"><span id="span_add" class="add"></span><span id="span_minus" class="minus"></span></div>
+
+        <div class='canvasDiv' id='canvasDiv'></div>
+
+
+    </body>
+
+<script type="text/javascript" src="js/jquery-2.1.4-min.js"></script>
+<script type="text/javascript" src="js/ichart.1.2.min.js"></script>
+<script type="text/javascript">
+        $(function(){
+            var canvasH = $(".canvasDiv").width();
+            //alert(canvasH);
+            var flow01 = [2, 4, 12, 3, 9, 4, 18,12,4,1,16,0, 2,15,4,22,3,0];
+            var flow02 = [18, 15, 20, 17, 20, 14, 20,18,24,47,19,20, 20,28,24,17,19,20];
+            var flow03 = [34, 29, 52, 27, 30, 34, 30,68,34,27,29,30, 30,28,34,27,79,30];
+            var flow04 = [46, 42, 42, 47, 40, 44, 40,48,64,47,49,42, 40,48,34,47,39,40];
+            var flow05 = [12, 9, 18, 7, 9, 12, 10,14,8,7,13,10,8,8,6,7,9,10];
+            var flow06 = [72, 79, 48, 77, 79, 52, 70,74,78,47,73,70,78,87,46,77,79,71];
+            //for(var i=0;i<12;i++){//显示数量自定义
+            //    flow.push(Math.floor(Math.random()*(3000+((i%12)*5)))+10);
+            //}
+            var data = [
+                        {
+                            name : '步数',
+                            value:flow01,//[1,1652,20,26,30,132,29,222,0,0,132,29],
+                            color:'#ff3f10',
+                            line_width:1
+                        },
+                        {
+                            name : '步数',
+                            value:flow02,//[1,1652,20,26,30,132,29,222,0,0,132,29],
+                            color:'#fece0a',
+                            line_width:1
+                        },
+                        {
+                            name : '步数',
+                            value:flow03,//[1,1652,20,26,30,132,29,222,0,0,132,29],
+                            color:'#ff66fe',
+                            line_width:1
+                        },
+                        {
+                            name : '步数',
+                            value:flow04,//[1,1652,20,26,30,132,29,222,0,0,132,29],
+                            color:'#9b6ff6',
+                            line_width:1
+                        },
+                        {
+                            name : '步数',
+                            value:flow05,//[1,1652,20,26,30,132,29,222,0,0,132,29],
+                            color:'#26d18d',
+                            line_width:1
+                        },
+                        {
+                            name : '步数',
+                            value:flow06,//[1,1652,20,26,30,132,29,222,0,0,132,29],
+                            color:'#07a1ff',
+                            line_width:1
+                        }
+                   ];
+            var labels =["1","2","3","4","5","6","7","8","9","10","11","21"]
+            var chart = new iChart.LineBasic2D({
+                        render : 'canvasDiv',
+                        data: data,
+                        // title : '北京2012年平均温度情况',
+                        width : canvasH,//+100
+                        height : 260,
+                        shadow:false,
+                        // shadow_color : 'red',
+                        // shadow_blur : 4,
+                        // shadow_offsetx : 0,
+                        // shadow_offsety : 2,
+                        tip:{
+                            enable:true,
+                            shadow:true
+                        },
+                        crosshair:{
+                            enable:true,
+                            line_color:'#62bce9'
+                        },
+                        sub_option : {
+                            label:true,
+                            hollow_inside:true,
+                            point_size:6
+                        },
+                        coordinate:{
+                            height:'80%',
+                            background_color:null,
+                            grid_color : '#e5e5e5',//经纬线
+                            axis : {
+                                color : '#fff',
+                                width : [0, 0, 0, 0]//上下左右标线
+                            },
+                            grids:{
+                                vertical:{
+                                    way:'share_alike',
+                                    value:10//经线条数
+                                }
+                            },
+                            scale:[{//配置自定义值轴
+                                 position:'left',//配置左值轴    
+                                 start_scale:0,//设置开始刻度为0
+                                 end_scale:0,//设置结束刻度为26
+                                 scale_space:0,//设置刻度间距
+                                 label : {color:'#a7a7a7',fontsize:11},//刻度值
+                                scale_color:'#fff',
+                                listeners:{//配置事件
+                                    parseText:function(t,x,y){//设置解析值轴文本
+                                        return {text:t+""}//左侧刻度单位
+                                    }
+                                }
+                            }//,{
+                                // position:'bottom', 
+                                 //label : {color:'#333',font : '微软雅黑',fontsize:11},
+                                 //scale_enable : false,
+                                //labels:labels
+                            //}]
+                            ]
+                            //labels:["1","2","3","4","5","6","7","8","9","10","11","21"]
+                        }
+                        });
+            
+            //利用自定义组件构造左侧说明文本
+            chart.plugin(new iChart.Custom({
+                    drawFn:function(){
+                        //计算位置
+                        var coo = chart.getCoordinate(),
+                            x = coo.get('originx'),
+                            y = coo.get('originy'),
+                            w = coo.width,
+                            h = coo.height;
+                        //在左上侧的位置，渲染一个单位的文字
+                        chart.target.textAlign('start')
+                        .textBaseline('bottom')
+                        .textFont('600 11px 微软雅黑')
+                        .fillText('成交价/元',x-20,y-12,false,'#555555')
+                        .textBaseline('top')
+                        .fillText('17/08/27',x+w-35,y+h+10,false,'#555555')
+                        .fillText('17/05/27',x-20,y+h+10,false,'#555555');
+                        
+                    }
+            }));
+            chart.draw();
+        });
+</script>
+</html>

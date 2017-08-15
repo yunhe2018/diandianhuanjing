@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en" style="height:100%; background:#fff;">
+<head>
+    <meta charset="UTF-8">
+    <title>点点环境-碳币</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/ichart.1.2.min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body style="height:100%;">
+    <div class="headerSpace"></div>
+    <div class="header02">
+        <b class="back"  id="btnback"></b>
+        <span class="txt nopic toTop">我的碳银行帐户</span>
+        <p class="topTip">我们将您的减排量兑换成碳币以感谢您的绿色出行。</p>
+    </div>
+    <div class="stepWrap">
+        <div class="stepCount">
+            <p>碳币余额</p>
+            <b id="span_carbon_balance">0</b>
+            <span>碳币</span>
+        </div>
+    </div>
+        <div class="space"></div>
+        <div class="myIn">
+            <h1>收入<span id="span_carbon_in"></span></h1>
+            <ul>
+                <li id="li_Walk">步行碳币：<span id="span_Walk"></span></li>
+                <li id="li_NewEnergy">新能源汽车里程碳币：<span id="span_NewEnergy"></span></li>
+                <li id="li_Trade">碳交易收入：<span id="span_Trade"></span><span class="frt" id="span_SellCarbon">去碳交易</span></li>
+                <li id="li_Buy">购买碳币：<span id="span_Buy"></span> <span class="frt" id="span_Recharge">去充值</span></li>
+            </ul>
+        </div>
+        <div class="myIn">
+            <h1>支出<span id="span_carbon_out"></span></h1>
+            <ul>
+                <li id="li_ExchangeReport">兑换环境质量报告：<span id="span_ExchangeReport"></span> <span class="frt" id="span_Report">兑换报告</span></li>
+                <li id="li_ExchangeGift">兑换奖品：<span id="span_ExchangeGift"></span> <span class="frt" id="span_Gift">去兑换</span></li>
+                <li id="li_Speculate">碳交易支出：<span id="span_Speculate"></span> <span class="frt" id="span_BuyCarbon">去碳交易</span></li>
+            </ul>
+        </div>
+        <div class="space"></div>
+        <div class="boxWrap03">
+            <div class="stepWrap">
+
+                <div class="Kline">
+                    <div class="tipBox">
+                        <span id="span_date_in"></span>
+                        <!--<b class="class"><i class="or">月</i><i>年</i></b>-->
+                    </div>
+                    <div class='canvasDiv' id='canvasDiv'></div>
+                </div>
+                <div class="Kline">
+                    <div class="tipBox">
+                        <span id="span_date_out"></span>
+                        <!--<b class="class"><i class="or">月</i><i>年</i></b>-->
+                    </div>
+                    <div class='canvasDiv canvasDiv02' id='canvasDiv02'></div>
+                </div>
+            </div>
+        </div>
+        <div class="botNavWrap">
+            <ul class="botNav" id="ul_footerMenu"></ul>
+        </div>
+        <script type="text/javascript">
+            var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/g_footer.js", "/js/carbon.js"]];
+            WriteStatic(staticlist);
+        </script>
+</body>
+</html>
+

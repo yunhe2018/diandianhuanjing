@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+<style>
+</style>
+</head>
+<body>
+    <div class="header03" id="span_date">2017.3.24 星期五丁酉年二月廿七</div>
+    <div class="rt_date">
+        <div class="loupan" id="loupan"></div>
+    </div>    
+    <div class="bigPicBox">
+        <img class="bigPic" src="img/indexbg/good/3.jpg" id="bg_img">
+        <i class="date" id="i_city"><i></i>北京市东城区中华路</i>
+        <!-- <span class="score">环境综合评分</span>
+        <div class="score_wrap">
+            <span class="score_num pm yiban" id="span_score">87</span>
+            <div class="wea_data">
+                <img src="img/wea_good.png" id="div_index" style="">
+                <i class="point_01" style="display: block;">.</i>
+                <i class="point_02" style="display: block;">.</i>
+                <i class="point_03" style="display: block;">.</i>
+                <i class="point_04" style="display: none;"></i>
+            </div>
+        </div> -->
+        <div class="boxWrap">
+            <canvas id="c1"></canvas>
+            <span class="score">环境综合评分</span>
+            <span class="score_num" id="span_score">87</span>
+            <div class="wea_data_wrap">
+                <span class="wea_data">
+                    优于全国28%地区
+                    <i class="point_01" style="display: block;">.</i>
+                    <i class="point_02" style="display: block;">.</i>
+                    <i class="point_03" style="display: block;">.</i>
+                    <i class="point_04" style="display: block;"></i>
+                </span>
+            </div>
+            <div class="degree">
+                <span class="degree_good">优</span>
+                <span class="degree_liang">良</span>
+                <span class="degree_bad">差</span>
+                <span class="top_30"></span>
+                <span class="top_50"></span>
+                <span class="top_70"></span>
+                <span class="degree_0">0</span>
+                <span class="degree_30">30</span>
+                <span class="degree_50">50</span>
+                <span class="degree_70">70</span>
+                <span class="degree_100">100</span>
+            </div>
+        </div>
+            <!--<ul class="zong_botm">
+                <li id="div_weather">
+                    <p id="p1"></p>
+                    <p id="p2"></p>
+                    <p id="p3"></p>
+                </li>
+                <li id="div_step">
+                    <p>低碳里程</p>
+                    <p><span class="stepCount" id="span_step">0</span><b class="stepCon">步</b></p>
+                    <p><span class="lookDetal">查看详情</span></p>
+                </li>
+                <li id="div_carbon">
+                    <p>点点炒碳</p>
+                    <p><span class="stepCount" id="span_carbon">0</span><b class="stepCon">币</b></p>
+                    <p><span class="lookDetal">查看详情</span></p>
+                </li>
+            </ul>-->
+        <div class="zong_botm_wrap">
+            <!-- <p class="topTip" id="p_weather" style=""><span id="p1">温度：3℃</span><span id="p2">湿度：94%</span><span><i id="p3">风力：南风微风</i></span></p> -->
+            <ul class="topTip clearfix">
+                <li>
+                    <div class="top clearfix">
+                        <span class="today fl">今天</span>
+                        <span class=" fr">轻度</span>
+                    </div>
+                    <div class="min clearfix"> 
+                        <span class="fl">-2℃</span>
+                        <span class="fr">47%</span>
+                    </div>
+                    <div class="botm clearfix"> 
+                        <span class="weatherChange fl">小雨</span>
+                        <img class="weatherImg fr" src="img/xiaoyu.png"  />
+                    </div>
+                </li>
+                <li>
+                    <div class="top clearfix">
+                        <span class="today fl">今天</span>
+                        <span class=" fr">轻度</span>
+                    </div>
+                    <div class="min clearfix"> 
+                        <span class="fl">-2℃</span>
+                        <span class="fr">47%</span>
+                    </div>
+                    <div class="botm clearfix"> 
+                        <span class="weatherChange fl">小雨</span>
+                        <img class="weatherImg fr" src="img/xiaoyu.png"  />
+                    </div>
+                </li>
+            </ul>
+            <ul class="zong_botm clearfix">
+                <li id="div_carbon">
+                    <p>点点炒碳</p>
+                    <b class="lookDetal"></b>
+                </li>
+                <li id="div_weather">
+                    <p>点点看环境</p>
+                    <b class="lookDetal"></b>
+                </li>
+                
+                <li id="div_account">
+                    <p>点点碳银行</p>
+                    <b class="lookDetal"></b>
+                </li>
+                <li id="div_step">
+                    <p>点点里程</p>
+                    <b class="lookDetal"></b>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html><script src="js/jquery-2.1.4-min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var oW = $(window).width()*0.7;
+        $(".boxWrap").height(oW*0.5);
+        // $("canvas").width(oW);
+        // $("canvas").height(oW*0.5);
+        $(".boxWrap").css({
+            "borderTopLeftRadius":oW*0.5+"px",
+            "WebkitBorderTopLeftRadius":oW*0.5+"px",
+            "borderTopRightRadius":oW*0.5+"px",
+            "WebkitBorderTopRightRadius":oW*0.5+"px"
+        });
+        var oC=document.getElementById('c1');
+        var gd=oC.getContext('2d');
+        //第一条线
+        gd.beginPath();
+        gd.arc(oW*0.5+2.5, oW*0.5+2.5, oW*0.5, d2a(-180), d2a(0), false);
+        gd.lineCap='round';
+        gd.strokeStyle='#d5d5d5';
+        gd.lineWidth=5; 
+        // gd.canvas.height=oW*0.5;
+        // gd.canvas.width=oW;
+        gd.stroke();
+        //第二条线
+        gd.beginPath();
+        gd.arc(oW*0.5+2.5, oW*0.5+2.5, oW*0.5, d2a(-180), d2a(-90), false);
+        gd.lineCap='round';
+        gd.strokeStyle='#32cd33';//#ffd61a//#ef5646
+        gd.lineWidth=5;
+        gd.stroke();
+        
+    })
+    //角度->弧度
+    function d2a(n)
+    {
+        //之前对PI理解不对：PI=180°（这个理解不对）！！应当是：一弧度=PI/180！！ 然后求几度的弧度数则为如下：
+        return n*Math.PI/180;
+    }
+</script>

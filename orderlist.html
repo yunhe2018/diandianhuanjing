@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+            WriteStatic(staticlist);
+    </script>
+    <script>
+        if (IsInWeiXin.check()) {
+            $.each(g_const_OrderConfirmRefer, function (k, o) {
+                if (document.referrer.toLowerCase().indexOf(o) > -1) {
+                    var wxUrl = g_const_PageURL.MyOrder_List + "?t=" + Math.random() + "&showwxpaytitle=1";
+                    localStorage["order_status"] = GetQueryString("order_status");
+                    WxInfo.GetPayID(wxUrl);
+                }
+            });
+        }
+    </script>
+</head>
+<body style="height:100%;background: #f8f8f8">
+    <input id="hid_uid" type="hidden" />
+    <div class="topBoxWrap">
+        <div class="headerSpace"></div>
+        <div class="header02">
+            <b class="back" id="btnBack"></b>
+            <span class="txt nopic">我的订单</span>
+        </div>
+        <div class="orderMenu">
+            <ul id="ul_menu">
+                <li onclick="SetOrderStatus('',this)" id="li_0" class="curr"><span>全部订单</span></li>
+                <li onclick="SetOrderStatus('4', this)" id="li_1"><span>已付款</span></li>
+                <li onclick="SetOrderStatus('0', this)" id="li_2"><span>待付款</span></li>
+            </ul>
+        </div>
+        <div class="detailsWrap d_list orderList">
+            <ul class="details" id="ul_orderlist">
+                <!--<li>
+                    <a class="clearfix" onclick="Project.Load_Detail('LP161004111543','39.9763865','116.359634','东升乡居住商业项目')">
+                        <div class="pic fl"><img src="img/default_small_4.jpg"></div>
+                        <div class="con fl">
+                            <h4>东升乡居住商业项目</h4><p class="title02"> 东升乡蓟门桥北</p>
+                            <div class="price02">299碳币<span>x2</span></div>
+                        </div>
+                    </a>
+                    <div class="order_service">
+                        <label>代付款</label>
+                        <a>取消</a>
+                        <a class="act">立即付款</a>
+                    </div>
+                </li>
+                <li>
+                    <a class="clearfix" onclick="Project.Load_Detail('LP161004111543','39.9763865','116.359634','东升乡居住商业项目')">
+                        <div class="pic fl"><img src="img/default_small_4.jpg"></div>
+                        <div class="con fl">
+                            <h4>东升乡居住商业项目</h4><p class="title02"> 东升乡蓟门桥北</p>
+                            <div class="price02">299碳币<span>x2</span></div>
+                        </div>
+                    </a>
+                    <div class="order_service">
+                        <label>代付款</label>
+                        <a>取消</a>
+                        <a class="act">立即付款</a>
+                    </div>
+                </li>-->
+            </ul>
+        </div>
+        <div class="orderNum" id="p_listcount"></div>
+        <a id="com_a"></a>
+    </div>
+</body>
+<script type="text/javascript">
+    var staticlist = [[], ["/js/tost.js", "/js/JValidator.js", "/js/g_app.js", "/js/orderlist.js"]];
+    WriteStatic(staticlist);
+</script>
+</html>

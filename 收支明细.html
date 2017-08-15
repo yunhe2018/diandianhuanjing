@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>点点环境-登录</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="telephone=no" name="format-detection">
+        <meta content="email=no" name="format-detection" />
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+        <link rel="stylesheet" type="text/css" href="css/base.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <div class="headerSpace"></div>
+        <div class="header02">
+            <b class="back" id="back_btn"></b>
+            <span class="txt noBefore" id="span_currname">碳账户</span>
+            <b class="txt02" id="btnReg">明细</b>
+        </div>
+
+        <div class="tanbiBalance account">
+            <div class="Logined">
+                <h2>碳币余额</h2>
+                <p class="balance">8652.00</p>
+                <div class="recharge">去充值</div>
+            </div>
+        </div>
+        <div class="space"></div>
+        <div class="orderMenu">
+            <ul class="twoMenu">
+                <li><span>收入明细</span></li>
+                <li class="curr"><span>支出明细</span></li>
+            </ul>
+        </div>
+
+        <div class="rechargeRecord">
+            <ul class="rechargeRecord_lsit pastRecords">
+                <li>
+                    <img src="img/menu08.png">
+                    <p class="mode">微信支付</p>
+                    <p class="time">2016-23-23 15:89:23</p>
+                    <span class="co_red">+5</span>
+                </li>
+                <li class="no_bord">
+                    <img src="img/menu10.png">
+                    <p class="mode">微信支付</p>
+                    <p class="time">2016-23-23 15:89:23</p>
+                    <span class="co_green">-5</span>
+                </li>
+            </ul>
+            <div class="lookMore">产看更多明细</div>
+        </div>
+<div class="space"></div>
+<div class="chartWrap_recharge">
+    <h2><span>五月点点币收入表</span></h2>
+    <div class='canvasDiv' id='canvasDiv'></div>
+    <div class="co_tip_recharge clearfix">
+        <span>步行炭币</span>
+        <span>购买炭币</span>
+    </div>
+</div>
+
+
+    </body>
+</html>
+<script type="text/javascript" src="js/jquery-2.1.4-min.js"></script>
+<script type="text/javascript" src="js/ichart.1.2.min.js"></script>
+<script type="text/javascript">
+        $(function(){
+            var canvasH = $(".canvasDiv").width();
+            //alert(canvasH);
+            var flow01 = [2, 4, 12, 3, 9, 4, 18,12,4,1,16,0, 2,15,4,22,3,0];
+            var flow03 = [34, 29, 52, 27, 30, 34, 30,68,34,27,29,30, 30,28,34,27,79,30];
+            //for(var i=0;i<12;i++){//显示数量自定义
+            //    flow.push(Math.floor(Math.random()*(3000+((i%12)*5)))+10);
+            //}
+            var data = [
+                        {
+                            name : '步数',
+                            value:flow01,//[1,1652,20,26,30,132,29,222,0,0,132,29],
+                            color:'#ff3f10',
+                            line_width:1
+                        },
+                        {
+                            name : '步数',
+                            value:flow03,//[1,1652,20,26,30,132,29,222,0,0,132,29],
+                            color:'#ff66fe',
+                            line_width:1
+                        }
+                   ];
+            var labels =["1","2","3","4","5","6","7","8","9","10","11","21"]
+            var chart = new iChart.LineBasic2D({
+                        render : 'canvasDiv',
+                        data: data,
+                        // title : '北京2012年平均温度情况',
+                        width : canvasH,//+100
+                        height : 260,
+                        shadow:false,
+                        // shadow_color : 'red',
+                        // shadow_blur : 4,
+                        // shadow_offsetx : 0,
+                        // shadow_offsety : 2,
+                        tip:{
+                            enable:true,
+                            shadow:true
+                        },
+                        crosshair:{
+                            enable:true,
+                            line_color:'#62bce9'
+                        },
+                        sub_option : {
+                            label:true,
+                            hollow_inside:true,
+                            point_size:6
+                        },
+                        coordinate:{
+                            height:'80%',
+                            background_color:null,
+                            grid_color : '#e5e5e5',//经纬线
+                            axis : {
+                                color : '#fff',
+                                width : [0, 0, 0, 0]//上下左右标线
+                            },
+                            grids:{
+                                vertical:{
+                                    way:'share_alike',
+                                    value:10//经线条数
+                                }
+                            },
+                            scale:[{//配置自定义值轴
+                                 position:'left',//配置左值轴    
+                                 start_scale:0,//设置开始刻度为0
+                                 end_scale:0,//设置结束刻度为26
+                                 scale_space:0,//设置刻度间距
+                                 label : {color:'#a7a7a7',fontsize:11},//刻度值
+                                scale_color:'#fff',
+                                listeners:{//配置事件
+                                    parseText:function(t,x,y){//设置解析值轴文本
+                                        return {text:t+""}//左侧刻度单位
+                                    }
+                                }
+                            }//,{
+                                // position:'bottom', 
+                                 //label : {color:'#333',font : '微软雅黑',fontsize:11},
+                                 //scale_enable : false,
+                                //labels:labels
+                            //}]
+                            ]
+                            //labels:["1","2","3","4","5","6","7","8","9","10","11","21"]
+                        }
+                        });
+            
+            //利用自定义组件构造左侧说明文本
+            chart.plugin(new iChart.Custom({
+                    drawFn:function(){
+                        //计算位置
+                        var coo = chart.getCoordinate(),
+                            x = coo.get('originx'),
+                            y = coo.get('originy'),
+                            w = coo.width,
+                            h = coo.height;
+                        //在左上侧的位置，渲染一个单位的文字
+                        chart.target.textAlign('start')
+                        .textBaseline('bottom')
+                        .textFont('600 11px 微软雅黑')
+                        .fillText('成交价/元',x-20,y-12,false,'#555555')
+                        .textBaseline('top')
+                        .fillText('17/08/27',x+w-35,y+h+10,false,'#555555')
+                        .fillText('17/05/27',x-20,y+h+10,false,'#555555');
+                        
+                    }
+            }));
+            chart.draw();
+        });
+</script>
+</html>

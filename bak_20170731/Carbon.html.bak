@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en" style="height:100%; background:#fff;">
+<head>
+    <meta charset="UTF-8">
+    <title>点点环境-碳币</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/ichart.1.2.min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body style="height:100%;">
+    <div class="headerSpace"></div>
+    <div class="header02">
+        <b class="back"  id="btnback"></b>
+        <span class="txt nopic toTop">我的碳银行帐号</span>
+		<!--p class="topTip">我们将您的减排量兑换成碳币以感谢您的绿色出行。</p-->
+    </div>
+    <p class="topTip">我们将您的减排量兑换成碳币以感谢您的绿色出行。</p>
+    <div class="myIn">
+        <h1>收入<span id="span_carbon_in"></span></h1>
+        <ul>
+            <li>步行碳币：<span id="span_Carbon"></span></li>
+            <li>新能源里程碳币：<span>待更新</span></li>
+            <li>购买碳币：<span>待更新</span></li>
+        </ul>
+    </div>
+    <div class="myIn">
+        <h1>支出<span>当日碳币：0.00</span></h1>
+        <ul>
+            <li>兑换环境质量报告：0</li>
+            <li>兑换奖品：<span>待更新</span></li>
+            <li>开户炒碳：<span>待更新</span></li>
+        </ul>
+    </div>
+    <div class="space"></div>
+    <div class="boxWrap03">
+        <div class="stepWrap">
+
+            <div class="Kline">
+                <div class="tipBox">
+                    <span id="span_date_in"></span>
+                    <!--<b class="class"><i class="or">月</i><i>年</i></b>-->
+                </div>
+                <div class='canvasDiv' id='canvasDiv'></div>
+            </div>
+            <div class="Kline">
+                <div class="tipBox">
+                    <span id="span_date_out"></span>
+                    <!--<b class="class"><i class="or">月</i><i>年</i></b>-->
+                </div>
+                <div class='canvasDiv canvasDiv02' id='canvasDiv02'></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+            var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/carbon.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>点点环境-订单确认</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+            WriteStatic(staticlist);
+    </script>
+    <script>
+        if (IsInWeiXin.check()) {
+            $.each(g_const_OrderConfirmRefer, function (k, o) {
+                if (document.referrer.toLowerCase().indexOf(o) > -1) {
+                    var wxUrl = g_const_PageURL.OrderConfirm + "?t=" + Math.random() + "&showwxpaytitle=1";
+                    WxInfo.GetPayID(wxUrl);
+                }
+            });
+        }
+    </script>
+</head>
+<body style="background: #f8f8f8">
+    <div class="headerSpace"></div>
+<!--top-->
+    <div class="header02">
+        <b class="back" id="btnback"></b>
+        <span class="txt nopic">确认订单</span>
+    </div>
+<!--top end-->
+
+<!--content-->
+    <input id="hid_uid" type="hidden" />
+    <input id="hid_carbon" type="hidden" />
+    <div class="indexBox">
+        <div class="address2" style="display:none" id="divAddressLogin" num="202062-div-2">
+            <div>
+                <p class="address-t"><span class="name"><b>&nbsp;</b><span id="spaddressuser">王兆安</span></span><span class="phone"><b>&nbsp;</b><span id="spaddressphone">15010311586</span></span></p>
+                <p><span id="spaddressdetail">北京市北京市朝阳区高碑店小郊亭1376号润坤大厦配楼2层</span></p>
+            </div>
+        </div>
+        <div class="space"></div>
+        <div class="detailsWrap">
+            <ul class="details" style="margin-top:.05rem;" id="projectlist"></ul>
+        </div>
+        <div id="divyhq" class="sub" num="202062-div-5">
+            <b class="jt3">&nbsp;</b>
+            环境报告等级
+            <span id="divyhqnum" class="qnum fr"></span>
+        </div>
+        <div id="divyhq" class="sub" num="202062-div-5" style="display:none">
+            <b class="jt3">&nbsp;</b>
+            传输方式
+            <span id="divyhqnum" class="qnum fr">1张可用</span>
+        </div>
+        <div class="orderConfirmCarbon sub" id="balanceModel">
+
+            <div class="orderConfirmCarbon_div1">
+                碳币支付：<i id="balanceInfo" style="font-size:12px;"></i>
+                <span id="balanceUse" class="orderConfirmCarbon_div1_span fr"></span>
+            </div>
+
+
+            <div class="orderConfirmCarbon_div3" id="balanceCheck">
+                <input type="radio" name="zhifu" value="zhifubao">
+            </div>
+        </div>
+
+        <div class="apply" id="divPaytype" style="">
+            <div class="fx pay-select" module="202063">
+                <div class="divt">支付方式</div>
+                <div class="lid" id="divalipay" style="display:none">
+                    <a class="sela on" >&nbsp;</a><span class="fx-zf"><b>&nbsp;</b>支付宝</span>
+                </div>
+                <div class="lid" id="divweixin" style="display:none">
+                    <a class="sela on" >&nbsp;</a><span class="fx-weix"><b>&nbsp;</b>微信支付</span>
+                </div>
+                <div class="lid" id="divalipayapp" style="display:none">
+                    <a class="sela on" id="a_app_al">&nbsp;</a><span class="fx-zf"><b>&nbsp;</b>支付宝</span>
+                </div>
+                <div class="lid" id="divweixinapp" style="display:none">
+                    <a class="sela" id="a_app_wx">&nbsp;</a><span class="fx-weix"><b>&nbsp;</b>微信支付</span>
+                </div>
+                <div class="lid" id="divgetpay" style="display:none">
+                    <a class="sela" onclick="setPaytype(0, this)" id="btnGetpay">&nbsp;</a><span class="fx-df"><b>&nbsp;</b>货到付款</span>
+                </div>
+            </div>
+        </div>
+        <div class="OrderPayBtn">
+            <span class="txt fl" id="span_paymonay">实付：¥<i>10</i></span>
+            <span class="btn fr" id="btnPay">支付</span>
+        </div>
+    </div>
+
+<div class="middle_content" style="display:none">
+    <ul>
+        <li class="clearfix li1" style="display:none" >
+            <div class="gerenxinxi zuofudong">
+                <p class="nameTel fontC222 fontS30"><span class="name">朱小伟</span><span class="tel">136****0598</span>
+                </p>
+
+                <p class="address"><span class="province">北京</span><span class="city">北京</span><span
+                        class="area">朝阳区</span><span>五环到六环</span><span>13号北苑</span><span>华贸城</span><span>2号院</span><span>3号楼</span><span>231室</span>
+                </p>
+            </div>
+            <div class="jiantou">
+                <i></i>
+            </div>
+        </li>
+        <div id="projectlist"></div>
+        <!--<li class="clearfix li2">
+            <img src="images/dingdanimg.png" alt="" class="zuofudong baogaoimg"/>
+
+            <h3 class="fontC222 fontS34">欧陆经典楼盘环境报告</h3>
+
+            <p class="fontC555 fontS26">环境报告等级 <span class="fontC18b6b9">高级</span></p>
+            <span class="fontS36 fontCdc2916">¥300.00</span>
+        </li>
+        <li class="clearfix li2">
+            <img src="images/dingdanimg.png" alt="" class="zuofudong baogaoimg" />
+
+            <h3 class="fontC222 fontS34">欧陆经典楼盘环境报告</h3>
+
+            <p class="fontC555 fontS26">环境报告等级 <span class="fontC18b6b9">高级</span></p>
+            <span class="fontS36 fontCdc2916">¥300.00</span>
+        </li>-->
+        <li class="clearfix li3" style="display:none" >
+            <div class="zuofudong">
+                <span class="zuofudong">选择传输方式</span>
+
+                <p class="zuofudong chuanshufangshi">
+                    <span>邮箱发送</span>
+                    <span>zhuweiting05...</span>
+                </p>
+            </div>
+            <div class="jiantou">
+                <i></i>
+            </div>
+        </li>
+        <li class="clearfix li4">
+            <div class="zuofudong">
+                <span>发票信息</span>
+                <input type="text" class="info-info" id="txtBill" style="margin-left: 0.5rem;width:250px;" />
+            </div>
+        </li>
+        <li class="clearfix li4">
+            <div class="zuofudong">
+                <span>支付方式</span>
+                <span class="fapiao" id="spanPaytype"></span>
+            </div>
+        </li>
+        <li class="zhifu">
+            <span class="fontS34 fontCdc2916" id="span_paymonay"></span>
+            <span class="youfudong fontS34 fontCf9f9f9" id="btnPay">支付</span>
+        </li>
+    </ul>
+</div>
+<!--content end-->
+
+</body>
+
+</html>
+<script type="text/javascript">
+    var staticlist = [[], ["/js/g_app.js", "/js/tost.js", "/js/confirm.js"]];
+            WriteStatic(staticlist);
+</script>

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>点点环境-天气信息</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mwtIbCVKxq5l7TMLCpNrCnoOxGnWlotK"></script>
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+	
+</head>
+<body>
+    <div class="header03">
+        <i id="i_city"></i>
+    </div>
+    <div class="bigPicBox">
+        <img class="bigPic" src="img/bigPic_02.jpg">
+        <span class="date" id="span_date"></span>
+        <span class="score">环境综合评分</span>
+        <div class="score_wrap">
+            <span class="score_num pm yiban" id="span_score"></span>
+            <div class="wea_data">
+                <img src="" id="div_index">
+                <i class="point_01">.</i>
+                <i class="point_02">.</i>
+                <i class="point_03">.</i>
+                <i class="point_04"></i>
+            </div>
+        </div>
+            <ul class="zong_botm">
+                <li id="div_weather">
+                    <p id="p1"></p>
+                    <p id="p2"></p>
+                    <p id="p3"></p>
+                </li>
+                <li id="div_step">
+                    <p>低碳里程</p>
+                    <p><span class="stepCount" id="span_step">0</span><b class="stepCon">步</b></p>
+                    <p><span class="lookDetal">查看详情</span></p>
+                </li>
+                <li id="div_carbon">
+                    <p>点点炒碳</p>
+                    <p><span class="stepCount" id="span_carbon">0</span><b class="stepCon">币</b></p>
+                    <p><span class="lookDetal">查看详情</span></p>
+                </li>
+            </ul>
+        </div>
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/weather.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>
+<script src="js/jquery-2.1.4-min.js"></script>	
+<script>
+    $(function(){
+        alert("22222");
+		if($("#div_index").scr()==""){
+			$(this).css("opacity",0);
+		}
+    })
+</script>

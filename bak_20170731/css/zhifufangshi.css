@@ -1,0 +1,35 @@
+@charset "UTF-8";
+.middle_content p{
+    padding: 0.4375rem 0 0.46875rem 0.3125rem;
+    color: #222;
+    font-size: 0.46875rem;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+}
+
+.middle_content ul li{
+    padding: 0.25rem 0.3125rem;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.middle_content ul li img{
+    margin-right: 0.625rem;
+    width: 1.2rem;
+}
+
+.middle_content ul li span{
+    color: #555;
+    font-size: 0.375rem;
+    line-height: 1.2rem;
+}
+
+.middle_content ul li i{
+    display: inline-block;
+    float: right;
+    margin-top: 0.4rem;
+    width: 0.234rem;
+    height: .41rem;
+    background: url("../images/zhifujiantouright.png") no-repeat;
+    background-size: 100% 100%;
+}

@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点点环境-首页</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <meta property="wb:webmaster" content="b97e9eb0fa0c90be" />
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="hb_wth_wrap">
+		<!--div class="locationWrap">
+			<span class="location">北京</span>
+			<span class="time">发布时间： 18:32</span>
+		</div-->
+		<div class="header">
+                <span class="back" id="add_btn"></span>
+                <span class="txt" id="span_PositionName">东城区</span>
+				<span class="time">发布时间： 18:32</span>
+        </div>
+		<div class="score_wrap">
+            <p class="score_numWrap"><span class="score_num">67<i>°</i></span></p>
+			<p class="contentWrap"><span class="content"><i><img src="img/weather/day/00.png" /><img src="img/weather/day/00.png" /></i>晴转多云 西北风2级</span></p>
+            <div class="wea_data">
+                <img src="img/hb_wth_good.png">
+				<span>空气： 50 优</span>
+            </div>
+        </div>
+		<!--单条折线图-->
+		<div class="kLine">
+                <img class="numbImg" src="img/trend.png">
+                <h1 class="kLine_h1">空气污染</h1>
+                <div class="checksWrap">
+                    <ul class="checks" id="ul_week_kline">
+					<li><span class="time">12.30</span><span class="pollute veryverybad">重污</span></li>
+					<li><span class="time">12.31</span><span class="pollute veryverybadandbad">严污</span></li>
+					<li><span class="time">1.1</span><span class="pollute veryverybad">重污</span></li>
+					<li><span class="time">1.2</span><span class="pollute bad">轻污</span></li>
+					<li><span class="time">1.3</span><span class="pollute good">良</span></li>
+					<li><span class="time">1.4</span><span class="pollute veryverybad">重污</span></li>
+					<li><span class="time">1.5</span><span class="pollute bad">轻污</span></li>
+					</ul>
+                    <div class="myChart_k01" id="myChart_k" width="320" height="110"></div>
+                </div>
+                <div class="mask"></div>
+          </div>
+		  <!--双条折线图-->
+		  <div class="kLine">
+                <h1 class="kLine_h1 kLine_h2">未来七天天气预报</h1>
+                <div class="checksWrap">
+                    <ul class="week" id="ul_week_kline_7">
+					<li><p class="txt01">周五</p><p class="txt02">12.30</p></li><li><p class="txt01">周六</p><p class="txt02">12.31</p></li>
+					<li><p class="txt01">周日</p><p class="txt02">1.1</p></li><li><p class="txt01">周一</p><p class="txt02">1.2</p></li>
+					<li><p class="txt01">周二</p><p class="txt02">1.3</p></li><li><p class="txt01">周三</p><p class="txt02">1.4</p></li>
+					<li><p class="txt01">周四</p><p class="txt02">1.5</p></li>
+					</ul>
+                    <ul class="checks checks02" id="ul_week_night_7">
+					<li><span style="width:.20rem;height:.20rem;background:url(img/weather/day/53.png) no-repeat;background-size:100%;position:absolute;left:50%;margin-left:-.075rem;top:2px;"></span><span style="width:.20rem;height:.20rem;background:url(img/weather/night/53.png) no-repeat;background-size:100%;position:absolute;left:50%;margin-left:-.075rem;bottom:2px;"></span></li>
+					<li><span></span><span ></span></li>
+					<li><span></span><span ></span></li>
+					<li><span></span><span ></span></li>
+					<li><span></span><span ></span></li>
+					<li><span></span><span ></span></li>
+					<li><span></span><span></span></li>
+					</ul>
+                    <div class="myChart_k02" id="myChart_k_wearher" width="320" height="300"></div>
+                </div>
+                <div class="mask" style="display:block"></div>
+          </div>
+	</div>
+</body>
+</html>
+
+
+

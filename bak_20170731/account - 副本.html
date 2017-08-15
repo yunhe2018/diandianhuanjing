@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/weiHuanJing.css", "/css/zhuye.css"], ["/js/jquery-2.1.4-min.js", "/js/remcontroller.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body>
+    <div class="zhuye-box-out">
+        <div class="zhuye-box-in" id="zhuye_box_in">
+            <!--*********************************个人中心页面开始**********************************-->
+            <div id="person_data" class="person-data">
+                <!--图片背景开始-->
+                <div class="top-background-pic-person">
+                    <!--header开始-->
+                    <div id="header" class="header wbc-text-on-color">
+                        <b class="back"></b>
+                        <div class="page-title">
+                            个人中心
+                        </div>
+                        <div class="header-link" id="">
+                            <img src="zhuye_image/zset@2x.png" style="display:none" id="btnset">
+                        </div>
+                    </div>
+                    <!--header结束-->
+                    <!--登录头像开始-->
+                    <div class="login-pic-person" style="display:none"></div>
+                    <div class="login-text-person" id="btnLogin" style="display:none">登录</div>
+                    <!--<div class="login-text-person" ></div>-->
+                    <p id="divUser" style="display:none" class="login-text-user"><!--<span>北京  5°/15° PM2.5 38</span>--></p>
+                    <!--登录头像结束-->
+                </div>
+                <!--图片背景结束-->
+                <!--订单相关部分开始-->
+
+                <ul class="order-related">
+                    <li class="dai-fu-kuan" id="li_dfk">
+                        <div class="icon-and-text-orderrelated">
+                            <div class="icon-orderrelated">
+                                1
+                            </div>
+                            <div class="text-orderrelated">
+                                待付款
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dai-ping-jia" style="display:none">
+                        <div class="icon-and-text-orderrelated">
+                            <div class="icon-orderrelated">
+
+                            </div>
+                            <div class="text-orderrelated">
+                                待评价
+                            </div>
+                        </div>
+                    </li>
+                    <li class="quan-bu-ding-dan" id="li_all">
+                        <div class="icon-and-text-orderrelated">
+                            <div class="icon-orderrelated">
+
+                            </div>
+                            <div class="text-orderrelated">
+                                全部订单
+                            </div>
+                        </div>
+                    </li>
+                    <li class="wo-de-xiao-xi" style="display:none">
+                        <div class="icon-and-text-orderrelated">
+                            <div class="icon-orderrelated">
+
+                            </div>
+                            <div class="text-orderrelated">
+                                我的消息
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <!--订单相关部分结束-->
+                <!--一些其他的个人信息开始-->
+                <ul class="about-me">
+                    <li class="withborder" style="display:none">
+                        <img src="zhuye_image/zliulanjilu@2x.png">
+                        <span class="about-me-text">浏览记录</span>
+                        <span class="more-details"></span>
+                    </li>
+                    <li class="withborder" id="li_download">
+                        <img src="zhuye_image/zxiazaibaogao@2x.png">
+                        <span class="about-me-text">下载报告</span>
+                        <span class="more-details"></span>
+                    </li>
+                    <li class="withborder" style="display:none">
+                        <img src="zhuye_image/zwodeguanzhu@2x.png">
+                        <span class="about-me-text">我的关注</span>
+                        <span class="more-details"></span>
+                    </li>
+                    <li class="withborder" style="display:none">
+                        <img src="zhuye_image/zhuiyuanxufei@2x.png">
+                        <span class="about-me-text">会员续费</span>
+                        <span class="more-details"></span>
+                    </li>
+                    <li style="display:none">
+                        <img src="zhuye_image/zxiugaiyouxiang@2x.png">
+                        <span class="about-me-text">修改邮箱</span>
+                        <span class="more-details"></span>
+                    </li>
+                </ul>
+                <!--一些其他的个人信息结束-->
+            </div>
+
+            <!--*********************************个人中心页面结束**********************************-->
+        </div>
+    </div>
+    <!--*********************************tab选项卡开始**********************************-->
+    <div class="tab-menu wbc-footer">
+        <ul>
+            <li>
+                <div class="icon-and-text shouye" id="shouye">
+                    <div class="tab-icon"></div>
+                    <div class="tab-text">
+                        首页
+                    </div>
+                </div>
+
+            </li>
+            <li>
+                <div class="icon-and-text loupan" id="loupan">
+                    <div class="tab-icon"> </div>
+                    <div class="tab-text">
+                        楼盘
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="icon-and-text cart" id="buy">
+                    <div class="tab-icon"> </div>
+                    <div class="tab-text">
+                        购买
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="icon-and-text wode tab-active" id="wode">
+                    <div class="tab-icon"></div>
+                    <div class="tab-text">
+                        我的
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--*********************************tab选项卡结束**********************************-->
+
+    <script type="text/javascript">
+            var staticlist = [[], ["/js/account.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>
+

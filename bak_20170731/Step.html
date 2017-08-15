@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="en" style="height:100%; background:#fff;">
+<head>
+    <meta charset="UTF-8">
+    <title>点点环境-计步</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/ichart.1.2.min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body style="height:100%; background:#fff;">
+    <div class="headerSpace"></div>
+    <div class="header02">
+        <b class="back" id="btnback"></b>
+        <span class="txt nopic toTop">我的低碳里程</span>
+        <p class="topTip">真实记录您的每一次绿色出行和减少的二氧化碳排放量。</p>
+    </div>
+    
+    <div class="boxWrap">
+        <div class="stepWrap">
+            <div class="stepCount">
+                <p>记步</p>
+                <b id="stepNum">0</b>
+                <span>步</span>
+                <img src="img/stepPP.png">
+                <!--<b id="stepNum">0</b>
+                <span>步</span>
+                <p id="p_date">2016/10/14 09:42更新</p>
+                <img src="img/stepPP.png">
+                <ul class="stepZong clearfix">
+                    <li class="fl">
+                        <p>距离</p>
+                        <span><i id="i_distance">0</i>公里</span>
+                    </li>
+                    <li class="fl" style="display:none">
+                        <p>时长</p>
+                        <span><i>0</i>小时</span>
+                    </li>
+                    <li class="fl">
+                        <p>热量</p>
+                        <span><i id="i_heat">0</i>千卡</span>
+                    </li>
+                </ul>-->
+            </div>
+            <ul class="stepZong clearfix">
+                <li class="fl">
+                    <p>距离</p>
+                    <span><i id="i_distance">0</i>公里</span>
+                </li>
+                <li class="fl">
+                    <p>热量</p>
+                    <span><i id="i_heat">0</i>卡</span>
+                </li>
+                <li class="fl">
+                    <p>CO2减排量</p>
+                    <span><i id="i_ccers">0</i>克</span>
+                </li>
+            </ul>
+            <div class="Kline">
+                <!--<ul class="num clearfix">
+                    <li class="curr lf" onclick="api_Request.LoadResult(api_Request.resultList_week)">
+                        7日
+                        <span></span>
+                    </li>
+                    <li class="lf" onclick="api_Request.LoadResult(api_Request.resultList_month)">
+                        月
+                        <span></span>
+                    </li>
+                    <li class="lf" onclick="api_Request.LoadResult(api_Request.resultList_year)">
+                        年
+                        <span></span>
+                    </li>
+                </ul>-->
+                <!--部分作用是用于盖住canvase上边线，canvase其余边线用margin和overflow:hidden;遮住了。-->
+                <div class="tipBox">
+                    <span id="span_date"></span>
+                </div>
+                <div class='canvasDiv' id='canvasDiv'></div>
+            </div>
+            <!--div class="botTip"-->
+                <!--数据来源： iPhone5s-->
+                <!--span id="span_Record">同步数据</!--span>
+            </div-->
+        </div>
+    </div>
+
+        <div class="space"></div>
+
+        <div class="boxWrap02">
+            <div class="stepWrap">
+                <div class="stepCount">
+                    <p>新能源汽车里程<span>（待更新）</span></p>
+                    <b id="stepNum">0</b>
+                    <span>公里</span>
+                    <img src="img/stepPP02.png">
+                </div>
+                <ul class="stepZong clearfix">
+                    <li class="fl">
+                        <p>行驶公里数</p>
+                        <span><i>0</i>公里</span>
+                    </li>
+                    <li class="fl">
+                        <p>CO2减排量</p>
+                        <span><i>0</i>克</span>
+                    </li>
+                </ul>
+                <div class="Kline">
+                    <div class="tipBox">
+                        <!--<span>10月/11月</span>-->
+                        <!--<b class="class"><i class="or">月</i><i>年</i></b>-->
+                        <span id="span_date_far"></span>
+                    </div>
+                    <div class='canvasDiv canvasDiv02' id='canvasDiv02'></div>
+                </div>
+            </div>
+        </div>
+        <div class="botNavWrap">
+            <ul class="botNav" id="ul_footerMenu"></ul>
+        </div>
+        <script type="text/javascript">
+            var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/g_footer.js", "/js/step.js"]];
+            WriteStatic(staticlist);
+        </script>
+</body>
+</html>
+
+<!--<script type="text/javascript">
+        $(function(){
+            var canvasH = $(".canvasDiv").width();
+            //alert(canvasH);
+            var flow=[];
+            for(var i=0;i<12;i++){//显示数量自定义
+                flow.push(Math.floor(Math.random()*(3000+((i%12)*5)))+10);
+            }
+            var data = [
+                        {
+                            name : '步数',
+                            value:flow,//[1,1652,20,26,30,132,29,222,0,0,132,29],
+                            color:'#07a1ff',
+                            line_width:1
+                        }
+                   ];
+            var labels =["1","2","3","4","5","6","7","8","9","10","11","21"]
+            var chart = new iChart.LineBasic2D({
+                        render : 'canvasDiv',
+                        data: data,
+                        // title : '北京2012年平均温度情况',
+                        width : canvasH,
+                        height : 200,
+                        shadow:false,
+                        // shadow_color : 'red',
+                        // shadow_blur : 4,
+                        // shadow_offsetx : 0,
+                        // shadow_offsety : 2,
+                        tip:{
+                            enable:true,
+                            shadow:true
+                        },
+                        crosshair:{
+                            enable:true,
+                            line_color:'#62bce9'
+                        },
+                        sub_option : {
+                            label:false,
+                            hollow_inside:true,
+                            point_size:6
+                        },
+                        coordinate:{
+                            height:'80%',
+                            background_color:null,
+                            grid_color : '#fff',//经纬线
+                            axis : {
+                                color : '#c0d0e0',
+                                width : [0, 0, 1, 0]//上下左右标线
+                            },
+                            grids:{
+                                vertical:{
+                                    way:'share_alike',
+                                    value:5
+                                }
+                            },
+                            scale:[{//配置自定义值轴
+                                 position:'left',//配置左值轴
+                                 start_scale:0,//设置开始刻度为0
+                                 end_scale:0,//设置结束刻度为26
+                                 scale_space:0,//设置刻度间距
+                                 label : {color:'#fff',fontsize:11},//刻度值
+                                scale_color:'#fff',
+                                listeners:{//配置事件
+                                    parseText:function(t,x,y){//设置解析值轴文本
+                                        return {text:t+" cm"}
+                                    }
+                                }
+                            },{
+                                 position:'bottom',
+                                 label : {color:'#333',font : '微软雅黑',fontsize:11},
+                                 scale_enable : false,
+                                labels:labels
+                            }]
+                            //labels:["1","2","3","4","5","6","7","8","9","10","11","21"]
+                        }
+                        });
+
+            chart.draw();
+        });
+</script>
+<script type="text/javascript">
+    $(function(){
+        var count=18036;
+        var num01=count%258;
+        var oSetNum = $("#stepNum");
+        //$("#stepNum")
+        clearTimeout(oTimout);
+        var oTimout = setTimeout(function(){
+            clearInterval(timer);
+            var timer = setInterval(function(){
+                if(parseInt(oSetNum.text())==count){clearInterval(timer);}
+                if(count != 0 && oSetNum.text()<(count-num01)){
+                    oSetNum.text(parseInt(oSetNum.text())+258);
+                }else{
+                    oSetNum.text(parseInt(oSetNum.text())+num01);
+                    clearInterval(timer);
+                }
+            },20)
+        },200);
+    })
+</script>-->
+<script type="text/javascript">
+    $(function(){
+        $(".num li").click(function(){
+            $(this).addClass("curr").siblings().removeClass("curr");
+        })
+    })
+</script>
+

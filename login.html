@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>点点环境-登录</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="telephone=no" name="format-detection">
+        <meta content="email=no" name="format-detection" />
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+        <script src="/js/cdn.js"></script>
+        <script type="text/javascript">
+            var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+            WriteStatic(staticlist);
+        </script>
+    </head>
+    <body>
+        <input type="hidden" id="gobackurl" value="" />
+        <div class="headerSpace"></div>
+        <div class="header02">
+            <b class="back" id="back_btn"></b>
+            <span class="txt nopic">登录</span>
+            <b class="txt02" id="btnReg">注册</b>
+        </div>
+        <div class="logReg">
+            <div class="head" style="display:"><img src="/img/lnologin@2x.png"></div>
+            <div class="in">
+                <input style="background:#f8f8f8" type="text" placeholder="手机号" id="txtLogin">
+                <input style="background:#f8f8f8" type="password" placeholder="密码" id="txtPass">
+                <span class="loginBtn" id="btnToLogin">登录</span><!-- 
+                <i class="forget" id="btnPhoneLogin">快捷登录</i> -->
+                <i class="forget">忘记密码？</i>
+                <i class="regist">新用户注册</i>
+            </div>
+            <div class="shareDialog" style="/* display:none */">
+                <p class="shareTo"><span>使用其他账号登录</span></p>
+                <div class="imgWrap">
+                    <img id="weixin_login" src="img/weixin.png" style="display:none;">
+                    <img id="qq_login" src="img/QQ.png" style="display:none;">
+                    <img id="weibo_login" src="img/xinlang.png" style="display:none;">
+                    <img id="alipay_login" src="img/weixinquan.png" style="display:none;">
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/JValidator.js", "/js/g_app.js", "/js/Login.js"]];
+        WriteStatic(staticlist);
+    </script>
+</html>

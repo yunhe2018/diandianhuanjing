@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mwtIbCVKxq5l7TMLCpNrCnoOxGnWlotK"></script>
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body>
+    <div class="header03">
+        <span class="back" id="choose_city_goback"></span>
+    </div>
+    <div class="city">
+        <h1>热门城市</h1>
+        <ul class="columnList clearfix" id="cityList">
+        </ul>
+    </div>
+    <div class="botNavWrap" style="display:">
+        <ul class="botNav" id="ul_footerMenu"></ul>
+    </div>
+
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/g_app.js", "/js/g_footer.js", "/js/city.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>
+

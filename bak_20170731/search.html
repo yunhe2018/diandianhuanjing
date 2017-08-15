@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en" style="height:100%; background:#fff;">
+<head>
+    <meta charset="UTF-8">
+    <title>点点环境-搜索</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mwtIbCVKxq5l7TMLCpNrCnoOxGnWlotK"></script>
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body style="height:100%;">
+    <div class="header04Wrap">
+        <div class="header04">
+            <b class="back" id="btnback"></b>
+            <div class="in">
+                <b class="serchImg"></b>
+                <b class="close" id="btnClose"></b>
+                <input type="text" placeholder="搜索" id="txtSearch" />
+            </div>
+            <b class="serchText" id="btnSearch">搜索</b>
+        </div>
+    </div>
+    <ul class="columnList searchbox clearfix" id="ul_history" style="display:none">
+        <!--<li>定位</li>
+        <li>苏州</li>
+        <li>哈尔滨</li>
+        <li>苏州</li>
+        <li style="font-size: 0.13rem;">锡林郭勒</li>
+        <li>苏州</li>
+        <li style="font-size: 0.13rem;">锡林郭勒</li>
+        <li>苏州</li>
+        <li style="font-size: 0.13rem;">锡林郭勒</li>
+        <li>苏州</li>
+        <li>苏州</li>
+        <li style="font-size: 0.13rem;">锡林郭勒</li>
+        <li>苏州</li>-->
+    </ul>
+    <ul class="searchHistory" id="ul_projectlist">
+        <!--<li>
+            <p>谁知道呢</p>
+            <span>北京市 重阳去管去路12323号</span>
+        </li>
+        <li>
+            <p>谁知道呢</p>
+            <span>北京市 重阳去管去路12323号</span>
+        </li>
+        <li>
+            <p>谁知道呢</p>
+            <span>北京市 重阳去管去路12323号</span>
+        </li>
+        <li>
+            <p>谁知道呢</p>
+            <span>北京市 重阳去管去路12323号</span>
+        </li>-->
+    </ul>
+    <b class="lookMoreComment" style="display:none" id="btnClear">清除历史记录</b>
+    <div class="botNavWrap">
+        <ul class="botNav"  id="ul_footerMenu">
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/g_footer.js", "/js/search.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>

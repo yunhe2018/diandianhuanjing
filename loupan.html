@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mwtIbCVKxq5l7TMLCpNrCnoOxGnWlotK"></script>
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/weiHuanJing.css", "/css/zhuye.css"], ["/js/jquery-2.1.4-min.js", "/js/remcontroller.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body>
+    <div class="headerSpace"></div>
+    <div class="header02">
+        <b class="back"></b>
+        <span class="txt">兰花国际</span>
+
+    </div>
+    <div class="indexBox">
+        <div class="detailsWrap d_list">
+            <ul class="details">
+                <li>
+                    <a class="clearfix" href="javascript:;">
+                        <div class="pic fl"><img src="img/zuji.png"></div>
+                        <div class="con fl">
+                            <h4>欧陆经典</h4>
+                            <p class="title02">综合评分</p>
+                            <div class="price02">￥500.00</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="clearfix" href="javascript:;">
+                        <div class="pic fl"><img src="img/zuji.png"></div>
+                        <div class="con fl">
+                            <h4>欧陆经典</h4>
+                            <p class="title02">综合评分</p>
+                            <div class="price02">￥500.00</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="botNavWrap">
+            <ul class="botNav">
+                <li id="zhuye">
+                    <span>首页</span>
+                </li>
+                <li id="loupan1">
+                    <span>楼盘</span>
+                </li>
+                <li id="buy1">
+                    <span class="curr">购买</span>
+                </li>
+                <li id="wode1">
+                    <span>我的</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="zhuye-box-out">
+        <div class="zhuye-box-in" id="zhuye_box_in">
+            <!--************************首页对应的数据********************************-->
+
+            <!--**************************列表显示楼盘数据页面开始*******************************-->
+            <div class="buildings-list-page" style="display:">
+                <!--header开始-->
+                <div id="header" class="header wbc-text-on-color wbc-head">
+                    <div class="page-title">
+                        <img src="zhuye_image/zheaderlocation@2x.png">
+                        &nbsp;<span id="span_currname"></span>
+                        <!--<img src="zhuye_image/zmore@3x.png">-->
+                    </div>
+                    <div class="menubar" id="add_btn"></div>
+                    <div class="header-link" id="">
+                        <img src="zhuye_image/zshare@2x.png">
+                    </div>
+                    <div class="AQI" style="display:none">AQI&nbsp;&nbsp;<img src="zhuye_image/zmore@2x.png"></div>
+                    <!--AQI下拉菜单的div开始-->
+                    <ul class="AQI-details hide-page">
+                        <li class="AQI-details-row AQI-border">
+                            <ul>
+                                <li class="AQI-details-cell">空气</li>
+                                <li class="AQI-details-cell">霾</li>
+                            </ul>
+                        </li>
+                        <li class="AQI-details-row AQI-border">
+                            <ul>
+                                <li class="AQI-details-cell">噪音</li>
+                                <li class="AQI-details-cell">较小</li>
+                            </ul>
+                        </li>
+                        <li class="AQI-details-row AQI-border">
+                            <ul>
+                                <li class="AQI-details-cell">垃圾</li>
+                                <li class="AQI-details-cell">较差</li>
+                            </ul>
+                        </li>
+                        <li class="AQI-details-row AQI-border">
+                            <ul>
+                                <li class="AQI-details-cell">化工厂</li>
+                                <li class="AQI-details-cell">较小</li>
+                            </ul>
+                        </li>
+                        <li class="AQI-details-row AQI-border">
+                            <ul>
+                                <li class="AQI-details-cell">高压</li>
+                                <li class="AQI-details-cell">较好</li>
+                            </ul>
+                        </li>
+                        <li class="AQI-details-row">
+                            <ul>
+                                <li class="AQI-details-cell">绿化</li>
+                                <li class="AQI-details-cell">很高</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!--AQI下拉菜单的div结束-->
+                </div>
+                <!--header结束-->
+                <!--楼盘列表开始-->
+                <div id="div_list" class="buildings-list">
+                    <ul id="ul_projectlist">
+                    </ul>
+                </div>
+                <!--楼盘列表结束-->
+                <!--楼盘地图部分开始-->
+                
+                <!--楼盘地图部分结束-->
+            </div>
+                <!--***************************列表显示楼盘数据页面结束*******************************-->
+            </div>
+    </div>
+    <!--*********************************tab选项卡开始**********************************-->
+    <div class="tab-menu wbc-footer">
+        <ul>
+            <li>
+                <div class="icon-and-text shouye" id="shouye">
+                    <div class="tab-icon"></div>
+                    <div class="tab-text">
+                        首页
+                    </div>
+                </div>
+
+            </li>
+            <li>
+                <div class="icon-and-text loupan" id="loupan">
+                    <div class="tab-icon"> </div>
+                    <div class="tab-text">
+                        楼盘
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="icon-and-text loupan tab-active" id="buy">
+                    <div class="tab-icon"> </div>
+                    <div class="tab-text">
+                        购物
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="icon-and-text wode" id="wode">
+                    <div class="tab-icon"></div>
+                    <div class="tab-text">
+                        我的
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--*********************************tab选项卡结束**********************************-->
+
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/loupan.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>
+

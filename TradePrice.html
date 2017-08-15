@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html style="height:100%; background:#fff;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>碳交易-行情列表</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/ichart.1.2.min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="">
+        <div class="headerSpace"></div>
+        <div class="header02">
+            <b class="back" id="btnback" style="display:none"></b>
+            <span class="txt nopic">行情列表</span>
+            <b class="tradeTip" id="btnchart"></b>
+        </div>
+        <div class="switch_nav_wrap">
+            <div id="switch_nav" class="switch_nav">
+                <ul class="clearfix" id="ul_city"></ul>
+            </div>
+        </div>
+            <div class="tbWrap">
+                <dl id="tb_list" class="tb_five co_222"></dl>
+            </div>
+            <p class="orderCount" id="p_list"></p>
+            <ul class="botNav" id="ul_footerMenu"></ul>
+        </div>
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/iscroll.js", "/js/g_footer.js", "/js/tradeprice.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>

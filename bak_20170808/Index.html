@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>点点环境-天气信息</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mwtIbCVKxq5l7TMLCpNrCnoOxGnWlotK"></script>
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body>
+    <div class="page_01" style="display:none" id="div_page01">
+        <div class="headerSpace"></div>
+        <div class="header02">
+            <b class="edit" id="b_edit">编辑</b>
+            <b class="add toLeft" id=""></b>
+        </div>
+        <ul class="searchHistory" id="ul_addresslist">
+        </ul>
+    </div>
+
+    <div class="page_02" id="page_02">
+        <!--广告-->
+        <div class="page_02_top">
+            <div class="statePageAdvert02" style="display:none">
+                <p>网易严选秉承网易一贯的严谨态度,深入世界各地,严格把关所有商品的产地、工艺、原材料。</p>
+                <span class="close"></span>
+            </div>
+            <div class="statePageAdvert01" style="display:none">
+                <div class="mask_red">
+                    <img src="img/yyby.png">
+                    <div class="close_mask_red"></div>
+                </div>
+            </div>
+            <div class="rt_date">
+                <div class="loupan" id="loupan" style="display:none"></div>
+            </div>
+            <div class="bigPicBox">
+                <img class="bigPic" src="/img/bigPic_02.jpg" id="bg_img">
+                <div class="header header6">
+                    <span class="pluse">+</span>
+                    <span class="txt" id="i_city"></span>
+                    <span class="operat" style="display:none">...</span>
+                </div>
+                <div class="pzsNum"><ul><li class="curr"></li><li></li><li></li></ul></div>
+                <div class="today" id="span_date"></div>
+                <div class="boxWrap">
+                    <canvas id="c1" width="300" height="300"></canvas>
+                    <span class="score">环境质量综合评分</span>
+                    <span class="score_num" id="span_score"></span>
+                    <span class="score_detail" id="span_weather"></span>
+                    <div class="wea_data_wrap">
+                        <span class="wea_data" id="span_overarea">
+                            <b id="b_overarea">查看该地区地图模式</b>
+                            <i class="point_01" style="display: block;">.</i>
+                            <i class="point_02" style="display: block;">.</i>
+                            <i class="point_03" style="display: block;">.</i>
+                            <i class="point_04" style="display: block;"></i>
+                        </span>
+                    </div>
+                    <div class="degree">
+                        <span class="degree_good">优</span>
+                        <span class="degree_liang">良</span>
+                        <span class="degree_bad">差</span>
+                    </div>
+                </div>
+                <div class="todayStatusWrap" id="div_TodayStatusWrap" style="display:none">
+                    <span class="time" id="span_updatetime"></span>
+                    <h1>今日节能减排状况</h1>
+                    <ul class="clearfix">
+                        <li>
+                            <span id="span_step"></span>
+                            <span class="name">步数/步</span>
+                        </li>
+                        <li>=</li>
+                        <li>
+                            <span id="span_co2"></span>
+                            <span class="name">CO2减排量/克</span>
+                        </li>
+                        <li>=</li>
+                        <li>
+                            <span id="span_carbon"></span>
+                            <span class="name">获取点点币/个</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <ul class="botNav" id="ul_footerMenu"></ul>
+        </div>
+        <div class="page_02_botm">
+            <div class="thirdIndex fiveIndex">
+                <!--新首页上滑-->
+                <div class="newBox">
+                    <div class="space02"></div>
+                    <h1 class="kLine_h1 kLine_h2">周围环境指数分析</h1>
+                    <div class="general clearfix" style="margin-top:50px">
+                        <div class="score">
+                            <img src="img/general.png">
+                            <div class="pm" id="div_score_general"></div>
+                            <span class="pic fl" id="div_level_general"><img src="img/bad.png"> </span>
+                            <div class="weather_02 clearfix">
+                                <span class="pic02 fl" id="span_weather_icon_1" style="display:none"></span>
+                                <span class="pic02 fl" id="span_weather_icon_2" style="display:none"></span>
+                                <span class="txt fl" id="span_general"></span>
+                            </div>
+                        </div>
+                        <!--绘制雷达图-->
+                        <div class="chartWrap">
+                            <div class="chartPic"><canvas id="myChart" width="100%" height="100%"></canvas></div>
+                            <div class="chartTxt" id="div_chart_info">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="general clearfix">
+                        <div class="score">
+                            <img class="numbImg" src="img/numb.png">
+                            <ul class="pollute clearfix" id="ul_DetailList"></ul>
+                        </div>
+                    </div>
+                    <!--双条折线图-->
+                    <div class="kLine">
+                        <h1 class="kLine_h1 kLine_h2">未来七天天气预报</h1>
+                        <div class="checksWrap">
+                            <ul class="week" id="ul_week_kline_7"></ul>
+                            <ul class="checks checks02" id="ul_week_night_7"></ul>
+                            <div class="myChart_k02" id="myChart_k_wearher" width="320" height="300"></div>
+                        </div>
+                        <div class="mask" style="display:block"></div>
+                    </div>
+                    <!--end-->
+                    <div class="" style="height:70px"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <script type="text/javascript">
+            var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/weather.js", "/js/g_footer.js",  "/js/Chart.js", "/js/ichart.1.2.min.js"]];
+            WriteStatic(staticlist);
+        </script>
+</body>
+</html>
+
+<script type="text/javascript">
+$(function(){
+    $(".page_02_top").height($(window).height()-$(".botNav").height());
+    $(".pluse").click(function (event) {
+        $("#div_page01").show();
+        $(".page_02").css({
+            "transform": "translate("+($(window).width()-50)+"px, 0px)",
+            "transition": "all 1s ease"
+        })
+        event.stopPropagation();    //  阻止事件冒泡
+    })
+    $(".header02 .edit").click(function(){
+        if($(this).html()=="编辑"){
+            $(".page_02").css({
+                "transform": "translate("+($(window).width())+"px, 0px)",
+                "transition": "all 1s ease"
+            })
+            $(".searchHistory li").css({
+                "transform": "translate(0px, 0px)",
+                "transition": "all 1s ease"
+            })
+            $(".header02 .toLeft").css({
+                "transform": "translate(0px, 0px)",
+                "transition": "all 1s ease"
+            })
+            $(this).html("完成");
+        }else if($(this).html()=="完成"){
+            $(".page_02").css({
+                "transform": "translate("+($(window).width()-50)+"px, 0px)",
+                "transition": "all 1s ease"
+            })
+            $(".searchHistory li").css({
+                "transform": "translate(-0.34rem, 0px)",
+                "transition": "all 1s ease"
+            })
+            $(".header02 .toLeft").css({
+                "transform": "translate(-.5rem, 0px)",
+                "transition": "all 1s ease"
+            })
+            $(this).html("编辑");
+        }
+    })
+    $(".page_02").click(function(){
+        $(this).css({
+            "transform": "translate(0px, 0px)",
+            "transition": "all 1s ease"
+        })
+    })
+})
+</script>

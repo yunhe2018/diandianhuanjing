@@ -1,0 +1,230 @@
+@charset "utf-8";
+
+/************* Reset CSS *************/
+/* 清除内外边距 */
+html, body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, iframe, lengend, label, button, input, textarea, /* form elements 表单元素 */
+th, td {
+    /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    border: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+
+address, cite, dfn, var {
+    font-style: normal;
+}
+
+/* 将斜体扶正 */
+code, kbd, pre, samp, tt {
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* 统一等宽字体 */
+small {
+    font-size: 12px;
+}
+
+/* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/* 重置列表元素 */
+ul, ol {
+    list-style: none;
+}
+
+/* 重置文本格式元素 */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* 重置表单元素 */
+fieldset, img, button {
+    border: none;
+}
+
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+    outline: none;
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+}
+
+img, iframe, table, form {
+    vertical-align: top;
+}
+
+/* 重置表格元素 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*让q标签里面的引号消失*/
+q::before {
+    content: "";
+}
+
+q::after {
+    content: "";
+}
+
+/* 重置 hr */
+hr {
+    border: none;
+    height: 1px;
+}
+
+/************* Reset CSS *************/
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after, .clearfix:before {
+    content: "\200B";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+a, a:hover, a:target, a:active {
+    text-decoration: none;
+}
+
+small, cite, code, em, th, i, b {
+    font-style: normal;
+}
+/*微环境app*/
+body {
+    background: #f4f4f4;
+}
+
+.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #07a1ff;
+    z-index: 10;
+}
+
+.top_content {
+    padding: .5rem 0.421875rem;
+    color: #fff;
+    font-size: .5rem;
+    text-align: center;
+}
+
+.top_content a {
+    position: absolute;
+    left: 0.4375rem;
+}
+
+.top_content img {
+    margin-top: 0.05rem;
+    height: 0.4375rem;
+}
+
+.top_content span {
+    font-size: 0.5rem;
+}
+
+.middle_content{
+    padding-top: 1.5rem;
+    width: 100%;
+}
+/*左浮动*/
+.zuofudong{
+    float: left;
+}
+/*右浮动*/
+.youfudong{
+    float: right;
+}
+/*字体颜色*/
+.fontC222{
+    color: #222;
+}
+
+.fontC555{
+    color: #555;
+}
+
+.fontC18b6b9{
+    color: #18b6b9;
+}
+
+.fontC1b6c92{
+    color: #1b6c92;
+}
+
+.fontCdc2916{
+    color: #dc2916;
+}
+
+.fontCf9f9f9{
+    color: #f9f9f9;
+}
+
+.fontC999{
+    color: #999;
+}
+/*字体大小*/
+
+.fontS36{
+    font-size: 0.5625rem;
+}
+
+.fontS34{
+    font-size: 0.53125rem;
+}
+
+.fontS30{
+    font-size: 0.46875rem;
+}
+
+.fontS28{
+    font-size: 0.4375rem;
+}
+
+.fontS26{
+    font-size: 0.40625rem;
+}
+
+.fontS24{
+    font-size: 0.375rem;
+}
+
+.fontS20{
+    font-size: 0.3125rem;
+}
+
+.fontS18{
+    font-size: 0.28125rem;
+}
+
+/*li有上边框*/
+.middle_content ul li.borderT{
+    border-top: 1px solid #eaeaea;
+}

@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>碳币交易记录</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/ichart.1.2.min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body>
+    <div class="headerSpace"></div>
+    <div class="header02">
+        <b class="back" id="back_btn"></b>
+        <span class="txt noBefore" id="span_currname">碳币记录</span>
+        <b class="txt02" id="btnChoose">筛选</b>
+    </div>
+
+    <div class="rechargeRecord">
+        <div class="goodDelail_02" id="recordList" style="display:none">
+            <div class="pic_con no" id="notRecord">
+                <span class="pic_con_lt" id="span_carbon_type">本月</span>
+            </div>
+        </div>
+        <ul class="rechargeRecord_lsit pastRecords" id="ul_recordlist">
+            <!--<li>
+                <img src="img/menu08.png">
+                <p class="mode">微信支付</p>
+                <p class="time">2016-23-23 15:89:23</p>
+                <span class="co_red">+5</span>
+            </li>
+            <li class="no_bord">
+                <img src="img/menu10.png">
+                <p class="mode">微信支付</p>
+                <p class="time">2016-23-23 15:89:23</p>
+                <span class="co_green">-5</span>
+            </li>-->
+        </ul>
+    </div>
+    <div id="p_listend"></div>
+    <!--<div class="rechargeRecord">
+        <div class="goodDelail_02" id="recordList">
+            <div class="pic_con no" id="notRecord">
+                <span class="pic_con_lt" id="span_carbon_type">5月</span>
+            </div>
+        </div>
+        <ul class="rechargeRecord_lsit pastRecords">
+            <li>
+                <img src="img/menu08.png">
+                <p class="mode">微信支付</p>
+                <p class="time">2016-23-23 15:89:23</p>
+                <span class="co_red">+5</span>
+            </li>
+            <li class="no_bord">
+                <img src="img/menu10.png">
+                <p class="mode">微信支付</p>
+                <p class="time">2016-23-23 15:89:23</p>
+                <span class="co_green">-5</span>
+            </li>
+        </ul>
+    </div>-->
+
+
+    <div class="filterMask" style="display:none;" id="div_filter">
+        <div class="filterDialog">
+            <ul id="ul_carbon">
+                <li class="curr" type="" detailtype="">全部</li>
+                <li type="DC170208100002" detailtype="">收入</li>
+                <li type="DC170208100003" detailtype="">支出</li>
+                <li type="" detailtype="DC170208100004">步行碳币</li>
+                <li type="" detailtype="DC170208100008">兑换奖品</li>
+                <li type="" detailtype="DC170208100007">购买报告</li>
+                <li type="" detailtype="DC170208100006">碳币充值</li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+            var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/carbondetailall.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>

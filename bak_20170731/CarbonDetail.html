@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>碳币交易记录</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/ichart.1.2.min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body>
+    <div class="">
+        <!--div class="addrHeader">
+            <a href="#" class="back"></a>我的余额
+            <b>充值</b>
+        </div-->
+        <div class="headerSpace"></div>
+        <div class="header02">
+            <b class="back" id="btnback"></b>
+            <span class="txt nopic" id="span_title"></span>
+            <b class="txt02" id="btnReg" style="display:none">充值</b>
+        </div>
+        <div class="recharge_hd" style="display:none;">
+            <p class="recharge_hd_con">余额（夺金币）</p>
+            <p class="recharge_hd_num"></p>
+        </div>
+        <div class="rechargeRecord">
+            <!--ul class="rechargeRecord_ch clearfix">
+                <li class="curr">使用记录<i>30天</i></li>
+                <li>充值记录<i>30天</i></li>
+            </ul-->
+            <div class="goodDelail_02" id="recordList">
+                <div class="pic_con no" id="notRecord">
+                    <span class="pic_con_lt" id="span_carbon_type">
+                        碳币交易记录
+                    </span>
+                    <i>（最近30天）</i>
+                    <!-- <span class="pic_con_lt" style="float: right; margin-right: .1rem;" id="span_goto"></span> -->
+                </div>
+            </div>
+            <ul class="rechargeRecord_lsit" id="ul_recordlist">
+                <li>
+                    <p class="mode">微信支付<i>未支付</i></p>
+                    <p class="time">2016-23-23 15:89:23</p>
+                    <span>￥5</span>
+                </li>
+                <li class="no_bord">
+                    <p class="mode">微信支付<i class="green">未支付</i></p>
+                    <p class="time">2016-23-23 15:89:23</p>
+                    <span>￥5</span>
+                </li>
+            </ul>
+            <div id="imgod"></div>
+            <!--div class="noRecode"><img src="img/wwwww.jpg"></div-->
+        </div>
+    </div>
+    <input type="hidden" id="hidType" />
+    <script type="text/javascript">
+            var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/carbondetail.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>

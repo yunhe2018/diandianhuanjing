@@ -1,0 +1,278 @@
+﻿/*----------------------------------背景色-----------------------------------------*/
+/*头部背景颜色*//*蓝色按钮颜色*/
+.wbc-head, .wbc-blue-button {
+    background-color: #07a1ff;
+}
+
+/*底部背景颜色*/
+.wbc-footer {
+    background-color: #fcfcfc;
+}
+
+/*主窗口背景颜色*/
+.wbc-main {
+    background-color: #f4f4f4;
+}
+
+/*主窗口中展示信息的模块颜色*//*白色按钮颜色*/
+.wbc-info, .wbc-white-button {
+    background-color: #ffffff;
+}
+
+/*支付相关按钮背景颜色*/
+.wbc-pay {
+    background-color: #eb6100;
+}
+
+/*默认未选中(灰色)按钮背景颜色*/
+.wbc-grey-button {
+    background-color: #e9e9e9;
+}
+
+/*删除按钮背景颜色*/
+.wbc-delete {
+    background-color: #eb0c0c;
+}
+
+/*-----------------------------以上是背景色-----------------------------------------*/
+/*-------------------------------字体颜色-----------------------------------------*/
+/*基础字体颜色*/
+.wbc-text1 {
+    color: #222222;/*文字颜色最深*/
+}
+
+.wbc-text2 {
+    color: #555555;/*文字颜色中深*/
+}
+
+.wbc-text3 {
+    color: #999999;/*文字颜色最浅*/
+}
+
+.wbc-text4{
+    color: #18b6b9;/*出现频率较高的蓝色字体*/
+}
+
+/*有色背景上的文字颜色*/
+.wbc-text-on-color {
+    color: #ffffff;
+}
+
+/*支付的文字颜色*/
+.wbc-text-pay{
+    color: #eb6100;
+}
+
+/*等待支付的文字颜色*/
+.wbc-text-wait-pay{
+    color: #eb0c0c;
+}
+/*-------------------------------以上是字体颜色-----------------------------------------*/
+/*----------------------------------边框颜色-----------------------------------------*/
+
+/*白色背景白色模块的边框*/
+.wbc-border{
+   border-color: #e5e5e5; 
+}
+
+/*白色背景彩色模块的边框*/
+.wbc-border{
+   border-color: #ffffff; 
+}
+
+/*-------------------------------常用按钮-----------------------------------------*/
+/*.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.top_content {
+    padding: .5rem 0.421875rem;
+    color: #fff;
+    font-size: .5rem;
+    text-align: center;
+}
+
+.top_content a {
+    float: left;
+}*/
+
+/****************头部栏********************/
+.header{
+    width:100%;
+    height:1.375rem;
+    position:absolute;
+    top:0;
+    z-index: 200;
+}
+.header .back{position:absolute; left:.3rem; top:.52rem; width:.22rem; height:.4rem; background:url(../zhuye_image/back03.png) no-repeat; background-size:100%; }
+
+.back-btn {
+    position: absolute;
+    left: 0.55rem;
+    top: 0.58rem;
+    height:0.40rem;
+    width:0.40rem;
+    background: url("../login_image/jiantouWhite.png") no-repeat;
+    background-size: contain;
+}
+
+.page-title {
+    padding-top:0.42rem;
+    text-align:center;
+    font-size: 0.5rem;
+}
+
+.header-link {
+    position:absolute;
+    height:0.4rem;
+    width:1rem;
+    font-size: 0.375rem;
+    text-align: center;
+    top:0.45rem;
+    right: 0.375rem;
+}
+/*****************页面显示隐藏*******************/
+.hide-page{
+    display:none;
+}
+.show-page{
+    display: block;
+}
+/*-------------------------------页面重置-----------------------------------------*/
+@charset "utf-8";
+
+/************* Reset CSS *************/
+/* 清除内外边距 */
+html, body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, iframe, lengend, label, button, input, textarea, /* form elements 表单元素 */
+th, td,div {
+    /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+    font-family:Hiragino Sans GB,Arial,Helvetica,sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    position:relative;
+
+}
+
+img {
+    display: block;
+    border: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+
+address, cite, dfn, var {
+    font-style: normal;
+}
+
+/* 将斜体扶正 */
+code, kbd, pre, samp, tt {
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* 统一等宽字体 */
+small {
+    font-size: 12px;
+}
+
+/* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/* 重置列表元素 */
+ul, ol {
+    list-style: none;
+}
+
+/* 重置文本格式元素 */
+a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* 重置表单元素 */
+fieldset, img, button {
+    border: none;
+}
+
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+    outline: none;
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+}
+
+img, iframe, table, form {
+    vertical-align: top;
+}
+
+/* 重置表格元素 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*让q标签里面的引号消失*/
+q::before {
+    content: "";
+}
+
+q::after {
+    content: "";
+}
+
+/* 重置 hr */
+hr {
+    border: none;
+    height: 1px;
+}
+
+/************* Reset CSS *************/
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after, .clearfix:before {
+    content: "\200B";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+a, a:hover, a:target, a:active {
+    text-decoration: none;
+}
+
+small, cite, code, em, th, i, b {
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 500;
+}
+
+/*html字体设定*/
+
+
+/*tost效果*/
+#toastMessage { top: 50%; width: auto; max-width: 10rem; position: fixed; z-index: 9999; }
+#toastMessage span { display: block; overflow: hidden }
+#toastMessage .sbg { background: #000; color: #fff; opacity: .8; z-index: 1; width: 100%; height: 100%; position: absolute; left: 0; top: 0; border-radius: 5px; -webkit-border-radius: 5px; }
+#toastMessage .stxt { padding: 0.08rem 0.15rem 0.11rem; font-size: 0.7rem; line-height: 0.8rem; z-index: 2; color: #fff; text-align: center; position: relative }

@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>点点环境-个人中心</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body>
+    <div class="header03">
+        <span class="back" id="choose_city_goback" style="display:none"></span>
+        <span class="toll" id="btnset"></span>
+    </div>
+    <div class="personnal">
+        <article id="atcHead" class="portrait-hd">
+            <a num="202036-2">
+                <span class="user-portrait" id="div_headpic" style="background-image:url(/img/lnologin@2x.png)"></span>
+                <div id="divUser"><p class="user-index-login" id="btnLogin" style="display:none">登录</p><p class="user-index-login" id="btnUserName" style="display:none">登录</p></div>
+            </a>
+        </article>
+        <!-- <article class="user-order-number">
+            <a id="li_dfk" class="" num="202036-4">待付款<span><em id="em_dfk" style="display:none"></em></span></a>
+            <a id="MyOrder_List_DFH" class="" num="202036-5" style="display:none">待评价<span id="divDFH"></span></a>
+            <a id="li_all" class="" num="202036-6">全部订单<span id="divYFH"></span></a>
+            <a id="li_msg" class="" num="202036-7">我的消息<span id="divJYCG"><em id="em_msg" style="display:none"></em></span></a>
+        </article> -->
+        <article class="user-orders-menu">
+            <span><i>报告订单</i></span>
+            <span><i>商品订单</i></span>
+        </article>
+        <div class="tanbiBalance">
+            <!-- <div class="noLogin">
+                <h2>碳币余额</h2>
+                <p class="loginTip">登录后可查看碳币余额</p>
+                <span class="noLoginBtn">注册/登录</span>
+            </div> -->
+            <div class="Logined">
+                <h2>碳币余额</h2>
+                <p class="balance">8652.00</p>
+                <div class="books">
+                    <span class="in">昨日收入：<i>+3.86</i></span>
+                    <span class="out">昨日支出；<i>-0.00</i></span>
+                </div>
+            </div>
+        </div>
+        <ul class="my_menu">
+            <li class=" clearfix">
+                <a href="javascript:;" class="clearfix" id="li_history">
+                    <span class="menu_pic"><img src="img/mune01.png"></span>
+                    <span class="menu_txt">浏览记录</span>
+                    <span class="menu_point"></span>
+                </a>
+            </li>
+            <li class=" clearfix">
+                <a href="javascript:;" class="clearfix" id="li_download">
+                    <span class="menu_pic"><img src="img/mune02.png"></span>
+                    <span class="menu_txt">下载报告</span>
+                    <span class="menu_point"></span>
+                </a>
+            </li>
+            <li class=" clearfix">
+                <a href="javascript:;" class="clearfix" id="li_collection">
+                    <span class="menu_pic"><img src="img/mune03.png"></span>
+                    <span class="menu_txt">我的关注</span>
+                    <span class="menu_point"></span>
+                </a>
+            </li>
+            <li class=" clearfix" style="display:none">
+                <a href="javascript:;" class="clearfix">
+                    <span class="menu_pic"><img src="img/mune04.png"></span>
+                    <span class="menu_txt">会员续费</span>
+                    <span class="menu_point"></span>
+                </a>
+            </li>
+            <li class=" clearfix"  id="li_email">
+                <a href="javascript:;" class="clearfix">
+                    <span class="menu_pic"><img src="img/mune05.png"></span>
+                    <span class="menu_txt">修改邮箱</span>
+                    <span class="menu_point"></span>
+                </a>
+            </li>
+            <li class=" clearfix" id="li_step">
+                <a href="javascript:;" class="clearfix">
+                    <span class="menu_pic"><img src="img/mune06.png"></span>
+                    <span class="menu_txt">我的低碳里程</span>
+                    <span class="menu_point"></span>
+                </a>
+            </li>
+            <li class=" clearfix" id="li_carbon">
+                <a href="javascript:;" class="clearfix">
+                    <span class="menu_pic"><img src="img/mune07.png"></span>
+                    <span class="menu_txt">我的碳银行帐号</span>
+                    <span class="menu_point"></span>
+                </a>
+            </li>
+        </ul>
+        <div class="botNavWrap">
+            <ul class="botNav" id="ul_footerMenu">
+            </ul>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/g_footer.js", "/js/account.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>
+

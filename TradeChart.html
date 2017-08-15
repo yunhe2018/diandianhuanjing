@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html style="height:100%; background:#fff;">
+<head>
+    <title>碳交易-行情图形</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/ichart.1.2.min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+    <style>
+        .co_ff3f10:before{
+            background: #ff3f10;
+        }
+        .co_fece0a:before{
+            background: #fece0a;
+        }
+        .co_ff66fe:before{
+            background: #ff66fe;
+        }
+        .co_9b6ff6:before{
+            background: #9b6ff6;
+        }
+        .co_26d18d:before{
+            background: #26d18d;
+        }
+        .co_07a1ff:before{
+            background: #07a1ff;
+        }
+        .co_83ca40:before{
+            background: #83ca40;
+        }
+        .co_ffd900:before{
+            background: #ffd900;
+        }
+    </style>
+</head>
+<body>
+    <div class="">
+        <div class="headerSpace"></div>
+        <div class="header02">
+            <b class="back" id="btnback" style="display:none"></b>
+            <span class="txt nopic">行情图形</span>
+            <b class="TradeChartTool" id="btnlist" ></b>
+        </div>
+        <div class="switch_nav_wrap">
+            <div id="switch_nav" class="switch_nav">
+                <ul class="clearfix" id="ul_city"></ul>
+            </div>
+        </div>
+            <div class="tradeMark">
+                <ul class="tradeMarkTime" id="ul_time"><li class="curr" month="1">1个月</li><li month="3">3个月</li><li month="6">6个月</li><li month="12">1年</li></ul>
+            </div>
+            <div class="tradeMark" id="div_city" style="display:none">
+                <ul class="roseTabel curr">
+                    <li class="co_ff4416">
+                        <span class="txt" id="span_city_1"></span><span class="txt">涨幅：</span><span class="count co_ff4416" id="span_city_ratio"></span>
+                    </li>
+                    <li class="co_009143">
+                        <span class="txt">市场均价</span><span class="txt">涨幅：</span><span class="count co_009143" id="span_market_ratio"></span>
+                    </li>
+                </ul>
+                <ul class="roseTabel curr">
+                    <li class="co_ff4416">
+                        <span class="txt" id="span_city_2"></span><span class="txt">成交价：</span><span class="count" id="span_city_price"></span>
+                    </li>
+                    <li class="co_009143">
+                        <span class="txt">市场均价</span><span class="txt">成交价：</span><span class="count" id="span_market_price"></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tradeMark" id="div_all" style="display:none">
+                <ul class="roseTabel tabel_25 curr" id="ul_city_mark">
+                    <!--<li class="co_ff4416">
+                    <span class="txt co_">北京</span>
+                </li>
+                <li class="co_ff4416">
+                    <span class="txt">天津</span>
+                </li>
+                <li class="co_05a1ff">
+                    <span class="txt">上海</span>
+                </li>
+                <li class="co_ffce08">
+                    <span class="txt">深圳</span>
+                </li>
+                <li class="co_ff66ff">
+                    <span class="txt">北京</span>
+                </li>
+                <li class="co_7958ba">
+                    <span class="txt">天津</span>
+                </li>
+                <li class="co_ffce08">
+                    <span class="txt">上海</span>
+                </li>
+                <li class="co_ff4416">
+                    <span class="txt">深圳</span>
+                </li>-->
+                </ul>
+            </div>
+
+            <div class='canvasDiv' id='canvasDiv'></div>
+            <ul class="botNav" id="ul_footerMenu"></ul>
+        </div>
+
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/iscroll.js", "/js/g_footer.js", "/js/tradechart.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+
+</html>

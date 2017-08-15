@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>新能源里程</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="">
+        <div class="headerSpace"></div>
+        <div class="header02">
+            <b class="back" id="back_btn" style="display:none"></b>
+            <span class="txt nopic" id="span_date"></span>
+        </div>
+        <div class="stepNumWrap">
+            <div class="stepNum">
+                <h2>步数/步</h2>
+                <span class="num" id="span_step"></span>
+            </div>
+            <div class="stepDetail">
+                <ul class="user_have">
+                    <li id="li_MyCoupon">
+                        <span class="num" id="span_distance"></span>
+                        <span class="txt">步行里程/千米</span>
+                    </li>
+                    <li id="li_MyCoupon">
+                        <span class="num" id="span_co2"></span>
+                        <span class="txt">CO2减排量/克</span>
+                    </li>
+                    <li id="li_MyCarbon">
+                        <span class="num" id="span_carbon"></span>
+                        <span class="txt">获得点点币/个</span>
+                    </li>
+                </ul>
+                <div class="point"></div>
+            </div>
+        </div>
+    </div>
+    <div class="space"></div>
+    <!--柱状图-->
+    <div class='canvasDiv' id='canvasDiv'></div>
+    <!--end-->
+    <!--无状态-->
+    <div class="wuState" style="display:none;">
+        <img src="img/wu/icon_noData.png">
+        <!-- <p>懒虫、你的数据都是0，快去运动吧</p> -->
+        <p>获取不到运动数据啦，请开始“<span>设置-隐私-运动与健康</span>”的数据获取权限</p>
+    </div>
+    <div class="botNavWrap">
+        <ul class="botNav" id="ul_footerMenu">
+           
+        </ul>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/g_footer.js","js/ichart.1.2.min.js", "/js/energy.js"]];
+            WriteStatic(staticlist);
+</script>
+<script type="text/javascript">
+        $(function(){
+                    
+
+
+
+            });
+</script>

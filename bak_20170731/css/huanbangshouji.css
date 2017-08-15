@@ -1,0 +1,51 @@
+@charset "UTF-8";
+.middle_content p{
+    padding-left: 0.3125rem;
+    height: 1rem;
+    line-height: 1rem;
+}
+
+.middle_content ul li{
+    padding: 0 .5rem 0 0.3125rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    background: #fffdfd;
+    border-bottom: 1px solid #eaeaea;
+}
+
+i{
+    display: inline-block;
+    float: right;
+    margin-left: .1rem;
+    margin-top: .5rem;
+    width: 0.234rem;
+    height: .41rem;
+    background: url("../images/zhifujiantouright.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.newTel{
+    margin-right: 0.625rem;
+}
+
+li input{
+    border: none;
+}
+
+.middle_content div{
+    margin: 0.75rem auto 0;
+    width: 6.125rem;
+}
+
+.middle_content input[type="submit"]{
+    background: #18b6b9;
+    width: 100%;
+    height: 1rem;
+    border-radius: .2rem;
+    -moz-border-radius: .2rem;
+    -webkit-border-radius: .2rem;
+    box-shadow: none;
+    font-size: 0.46875rem;
+    color: #fff;
+}
+

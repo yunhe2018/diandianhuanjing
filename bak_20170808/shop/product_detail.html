@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>商品详情</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css", "/js/swiper/css/swiper.min.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body style="height:100%; background:#f8f8f8;">
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper" id="mainPicUrl">
+            <!--
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+            <div class="swiper-slide"><img src="img/zgerenzhongxin@2x.png"></div>
+            -->
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="goods-info" id="detail">
+        <h1><a id="a_productName"></a></h1>
+        <p>
+            <i class="f18" id="i_currentPrice"></i>
+            <i class="f12">炭币</i>
+            <em class="live-status" id="em_stockNum "></em>
+        </p>
+        <span class="tip" id="span_productTip"></span>
+    </div>
+    <div class="orderWrap">
+        <div class="num">
+            购买数量
+            <div class="bnum fr">
+                <a class="btn-minus num-01" id="minus-a">减一</a>
+                <input type="text" value="1" id="nums">
+                <a class="btn-add" id="add-a">加一</a>
+            </div>
+        </div>
+    </div>
+    <div class="space"></div>
+    <div class="good_detail">
+        <h2 class="good_detail_h2"><span>商品详情</span></h2>
+        <div class="good_detail_img" id="discriptPic"><!--<img src="img/default/pic_default_big_1.png">--></div>
+    </div>
+    <div class="bottBtnWrap">
+        <div class="bottBtn">
+            <!--<div class="chongBtn">您的余额不足，充值后可兑换此商品哦~<span>去充值</span></div>-->
+            <div class="totalPrice">
+                <div class="serverWrap">
+                    <img src="/img/server.png">
+                    <a href="" id="telCS"></a>
+                    <a href="" id="QQCS"></a>
+                </div>
+                <span class="confirmBtn pre" id="orderCreate">立即兑换</span>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/swiper/js/swiper.min.js", "/js/shop/product_detail.js"]];
+        WriteStatic(staticlist);
+    </script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html style="height:100%; background:#f8f8f8;">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>diandian</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="js/swiper/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+<style>
+</style>
+</head> 
+<body style="height:100%; background:#f8f8f8;">
+<div class="headerSpace"></div>
+<div class="header02">
+    <b class="back" id="back_btn"></b>
+    <span class="txt nopic">添加收货地址</span>
+</div>
+    
+
+<article class="my-address">
+    <ul class="add-address">
+        <li>
+            <label>收货人姓名</label>
+            <input type="text" name="" value="" placeholder="请输入收货人姓名" id="txtUserName" onkeyup="ChangeUserName()" onblur="ChangeUserName()">
+        </li>
+        <li>
+            <label>手机号码</label>
+            <input type="tel" name="" value="" placeholder="请输入手机号码" id="txtPhoneNo"></li>
+        <li id="liCode" style="display: none;">
+            <label>短信验证码</label>
+            <input type="tel" value="" placeholder="请输入验证码" id="txtValidCode">
+            <button id="btnCode" class="mobile-yanzm" style="display: none;">获取验证码</button>
+        </li>
+        <li>
+            <label>所在地区</label>
+            <span>山东省</span>
+            <span>潍坊市</span>
+            <span>潍城区域</span>
+        </li>
+        <li>
+            <label>详细地址</label>
+            <input type="text" name="" value="" placeholder="请输入详细地址" id="txtAddressDetail">
+        </li>
+    </ul>
+</article>
+<div class="setDefaultAddress">
+    <!-- <span></span> -->
+    <span class="act"></span>
+    <label>设置为默认地址</label>
+</div>
+<div class="newAddresssStoreBtn">保存</div>
+<div class="regionSlectMask" style="display:none">
+    <div class="regionSlect">
+        <h1>以下区域有售<span class="close"></span></h1>
+        <div class="guesslikefenlei">
+                <ul style="">
+                    <li class=""><span>北京</span></li>
+                    <li class=""><span>朝阳区</span></li>
+                    <li class="curr"><span>请选择</span></li>
+                </ul>
+        </div>
+        <div class="adressWrap">
+            <div class="adress" style="left: -828px;">
+                <div id="wrapper01" class="wrapper">
+                        <ul style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+                            <li class="curr">
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li style="color:blue">
+                                <span>三环到四环之间</span>
+                            </li>
+                        </ul>
+                </div>
+                <div id="wrapper02" class="wrapper">
+                        <ul style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+                            <li class="curr">
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li style="color:blue">
+                                <span>三环到四环之间</span>
+                            </li>
+                        </ul>
+                </div>
+                <div id="wrapper03" class="wrapper">
+                        <ul style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+                            <li class="curr">
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li style="color:blue">
+                                <span>三环到四环之间</span>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/jquery-2.1.4-min.js"></script>
+<script src="js/move6.js"></script>
+<script src="js/iscroll.js"></script>
+<script>
+        $(document).on('touchmove',function(e) {
+            var e = e || event;
+            e.preventDefault();
+        })
+        var myscroll = new IScroll("#wrapper01", {
+            scrollX: false, scrollY: true, mouseWheel: true, preventDefault: false
+        });
+        var myscroll = new IScroll("#wrapper02", {
+            scrollX: false, scrollY: true, mouseWheel: true, preventDefault: false
+        });
+        var myscroll = new IScroll("#wrapper03", {
+            scrollX: false, scrollY: true, mouseWheel: true, preventDefault: false
+        });
+</script>
+<script>
+$(function(){
+    var oUl = $(".adress")[0];
+    var aLiWidth = $(".wrapper").width();
+    var aBtn = $(".guesslikefenlei li");
+    for(var i=0;i<aBtn.length;i++){
+        (function(index){
+            aBtn[i].onclick=function(){
+                for(var i=0;i<aBtn.length;i++){
+                    aBtn[i].className='';
+                }
+                this.className='curr';
+                startMove(oUl,{left:-index*aLiWidth});
+            };
+        })(i);
+    }
+})
+</script>
+</body>
+</html>

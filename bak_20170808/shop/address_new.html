@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>diandian</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css", "/js/swiper/css/swiper.min.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body style="height:100%; background:#f8f8f8;">
+    <div class="headerSpace"></div>
+    <div class="header02">
+        <b class="back" id="back_btn"></b>
+        <span class="txt nopic">添加收货地址</span>
+    </div>
+    <article class="my-address">
+        <ul class="add-address">
+            <li>
+                <label>收货人姓名</label>
+                <input type="text" name="" value="" placeholder="请输入收货人姓名" id="txtUserName">
+            </li>
+            <li>
+                <label>手机号码</label>
+                <input type="tel" name="" value="" placeholder="请输入手机号码" id="txtPhoneNo">
+            </li>
+            <!--
+            <li id="liCode" style="display: none;">
+                <label>短信验证码</label>
+                <input type="tel" value="" placeholder="请输入验证码" id="txtValidCode">
+                <button id="btnCode" class="mobile-yanzm" style="display: none;">获取验证码</button>
+            </li>
+            -->
+            <li>
+                <label>所在地区</label>
+                <span id="provinceName"><!--山东省--></span>
+                <span id="cityName"><!--潍坊市--></span>
+                <span id="areaName"><!--潍城区域--></span>
+            </li>
+            
+            <li>
+                <label>详细地址</label>
+                <input type="text" name="" value="" placeholder="请输入详细地址" id="txtAddressDetail">
+                <input type="hidden" name="areaCode" id="areaCode" value="" />
+                <input type="hidden" name="province" id="province" value="" />
+            </li>
+        </ul>
+    </article>
+    <div class="setDefaultAddress">
+        <!-- <span></span> -->
+        <span class="act" id="isDefault"></span>
+        <label>设置为默认地址</label>
+    </div>
+    <div class="newAddresssStoreBtn" id="addressSub">保存</div>
+    <div class="regionSlectMask" style="display:none" id="areaS">
+        <div class="regionSlect">
+            <h1>以下区域有售<span class="close" id="closeDiv"></span></h1>
+            <div class="guesslikefenlei">
+                <ul style="">
+                    <li class="curr" id="provinceNameli"><span id="provinceNameS">请选择</span></li>
+                    <li class="" id="cityNameli"><span id="cityNameS">请选择</span></li>
+                    <li class="" id="areaNameli"><span id="areaNameS">请选择</span></li>
+                </ul>
+            </div>
+            <div class="adressWrap">
+                <div class="adress" style="">
+                    <div id="wrapper01" class="wrapper">
+                        <!--
+                        <ul style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+                            <li class="curr">
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li style="color:blue">
+                                <span>三环到四环之间</span>
+                            </li>
+                        </ul>
+                        -->
+                    </div>
+                    <div id="wrapper02" class="wrapper">
+                        <!--
+                        <ul style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+                            <li class="curr">
+                                <span>三环到四环之间11</span>
+                            </li>                        
+                            <li style="color:blue">
+                                <span>三环到四环之间</span>
+                            </li>
+                        </ul>
+                        -->
+                    </div>
+                    <div id="wrapper03" class="wrapper">
+                        <!--
+                        <ul style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+                            <li class="curr">
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li>
+                                <span>三环到四环之间</span>
+                            </li>
+                            <li style="color:blue">
+                                <span>三环到四环之间</span>
+                            </li>
+                        </ul>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/g_footer.js", "/js/shop/address_new.js", "/js/Chart.js", "/js/ichart.1.2.min.js", "/js/move6.js", "/js/iscroll.js"]];
+            WriteStatic(staticlist);
+    </script>
+    <!--
+    <script>
+        $(document).on('touchmove',function(e) {
+            var e = e || event;
+            e.preventDefault();
+        })
+        var myscroll = new IScroll("#wrapper01", {
+            scrollX: false, scrollY: true, mouseWheel: true, preventDefault: false
+        });
+        var myscroll = new IScroll("#wrapper02", {
+            scrollX: false, scrollY: true, mouseWheel: true, preventDefault: false
+        });
+        var myscroll = new IScroll("#wrapper03", {
+            scrollX: false, scrollY: true, mouseWheel: true, preventDefault: false
+        });
+    </script>
+    
+    <script>
+        $(function(){
+            var oUl = $(".adress")[0];
+            var aLiWidth = $(".wrapper").width();
+            var aBtn = $(".guesslikefenlei li");
+            for(var i=0;i<aBtn.length;i++){
+                (function(index){
+                    aBtn[i].onclick=function(){
+                        for(var i=0;i<aBtn.length;i++){
+                            aBtn[i].className='';
+                        }
+                        this.className='curr';
+                        startMove(oUl,{left:-index*aLiWidth});
+                    };
+                })(i);
+            }
+        })
+    </script>
+    -->
+</body>
+</html>

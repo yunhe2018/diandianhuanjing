@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>点点环境-报告</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+</head>
+<body>
+    <div class="header02">
+        <b class="back" id="btnback"></b>
+        <span id="span_report" class="txt"></span>
+        <span class="curr" id="span_detail" style="display:none">详情</span>
+        <span id="span_comment" style="display:none">评价</span>
+        <b class="share" id="btnShare" style="display:none"></b>
+        <!--<b class="operat">...</b>-->
+    </div>
+    <div class="thirdIndex">
+        <!--新首页上滑-->
+        <div class="newBox">
+
+            <div class="general clearfix" style="margin-top:100px">
+                    <div class="score">
+                        <img src="img/general.png">
+                        <div class="pm" id="div_score_general"></div>
+                        <span class="pic fl" id="div_level_general"><img src="img/bad.png"> </span>
+                        <div class="weather_02 clearfix">
+                            <span class="pic02 fl" id="span_weather_icon_1" style="display:none"></span>
+                            <span class="pic02 fl" id="span_weather_icon_2" style="display:none"></span>
+                            <span class="txt fl" id="span_general"></span>
+                        </div>
+                    </div>
+                    <!--绘制雷达图-->
+                    <div class="chartWrap">
+                        <div class="chartPic"><canvas id="myChart" width="100%" height="100%"></canvas></div>
+                        <div class="chartTxt" id="div_chart_info">
+
+                        </div>
+                    </div>
+                </div>
+            <div class="general clearfix">
+                <div class="score">
+                    <img class="numbImg" src="img/numb.png">
+                    <ul class="pollute clearfix" id="ul_DetailList"></ul>
+                </div>
+            </div>
+            <div class="baogao_detail loupan_detail" id="div_detail">
+                <div class="txt">
+                    <h2>楼盘详情</h2>
+                    <div class="p_detailWrap">
+                        <img id="img_report">
+                        <div class="mask"></div>
+                        <p id="p_detail"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="indexBox " id="div_comment">
+                <article class="commodity commodity_loupan">
+                    <h2>楼盘环境评价</h2>
+                    <div class="survey clearfix">
+                        <div class="mask"></div>
+                        <div class="fenWrap clearfix">
+                            <div class="fen fl">
+                                <p id="p_good"></p>
+                                <b>好评度</b>
+                            </div>
+                            <ul class="scale fr">
+                                <li class="clearfix">
+                                    <label class="fl" id="lbl_good">好评（0%）</label>
+                                    <span class="fr"><i id="span_good"></i></span>
+                                </li>
+                                <li class="clearfix">
+                                    <label class="fl" id="lbl_ok">中评（0%）</label>
+                                    <span class="fr"><i id="span_ok"></i></span>
+                                </li>
+                                <li class="clearfix">
+                                    <label class="fl" id="lbl_bad">差评（0%）</label>
+                                    <span class="fr"><i id="span_bad"></i></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <b class="comtBtn" style="display:" onclick="UserInfo.Check(CommentAll.OpenComment)">我要评论</b> -->
+                        <div class="impression" style="display:none">
+                            <h3>买家印象</h3>
+                            <ul class="clearfix">
+                                <li>报告分析全面</li>
+                                <li>报告全面</li>
+                                <li>报告全面</li>
+                                <li>报告分析全面</li>
+                                <li>报告全面</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="hd" id="gradeType" style="">
+                        <a href="javascript:void(0);" gradetype="all" num="1" class="curr" id="a_type_all">全部(0)</a>
+                        <a href="javascript:void(0);" gradetype="good" num="2" id="a_type_good">好评(0)</a>
+                        <a href="javascript:void(0);" gradetype="middle" num="3" id="a_type_ok">中评(0)</a>
+                        <a href="javascript:void(0);" gradetype="bad" num="4" id="a_type_bad">差评(0)</a>
+                        <a href="javascript:void(0);" gradetype="pic" num="5" style="display:none">有图(2)</a>
+                    </div>
+                    <ul style="" id="reviewList">
+                        <div class="mask"></div>
+                    </ul>
+                    <div class="noComment" id="reviewNo" style="display:none;">
+                        暂无评价
+                    </div>
+                </article>
+
+
+            </div>
+            <div class="" style="height:70px"></div>
+        </div>
+    </div>
+    <!--写评价-->
+    <div class="writeTxt" style="display:none" id="div_Follow">
+        <div class="top">
+            <span class="cancel" onclick="CommentAll.CloseComment()">取消</span>
+            写跟帖
+            <span class="send" onclick="CommentSend.GetList()">发送</span>
+        </div>
+        <font class="f2" grade="2">
+            <span>一般</span>
+            <i>
+                <em class="b1" grade="1"></em>
+                <em class="b2" grade="2"></em>
+                <em class="b3" grade="3"></em>
+                <!--<em class="b4" grade="4"></em>
+                <em class="b5" grade="5"></em>-->
+            </i>
+        </font>
+        <textarea id="txtComment"></textarea>
+    </div>
+    <!---->
+    <div class="botmBtn">
+        <b id="b_AddCol" class="collect" onclick="Collection.Add()"><i></i></b>
+        <b class="index" onclick="UserInfo.Check(CommentAll.OpenComment)"><i></i></b>
+        <b class="spend" onclick="Project.Buy_Report()">立即购买</b>
+        <b class="comtBtn" style="display:none" onclick="UserInfo.Check(CommentAll.OpenComment)">我要评论</b>
+    </div>
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/projectinfo.js", "/js/Chart.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>

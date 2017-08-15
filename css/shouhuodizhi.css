@@ -1,0 +1,25 @@
+@charset "UTF-8";
+.middle_content ul li{
+    padding-left: 0.3125rem;
+    padding-right: 0.3125rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    background: #fffdfd;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.sheng{
+    margin-top: .5rem;
+    border-top: 1px solid #eaeaea;
+}
+
+.middle_content ul li input{
+    border: none;
+}
+
+.top_content .baocun{
+    position: absolute;
+    top: .6rem;
+    right: 0.4375rem;
+    font-size: .375rem;
+}

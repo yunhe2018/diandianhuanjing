@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html style="height:100%; background:#fff;">
+<head>
+    <title>碳交易-行情图形</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <script src="/js/cdn.js"></script>
+    <script type="text/javascript">
+        var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/ichart.1.2.min.js", "/js/g_Const.js", "/js/g_header.js"]];
+        WriteStatic(staticlist);
+    </script>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="">
+        <div class="headerSpace"></div>
+        <div class="header02">
+            <b class="back" id="btnback"></b>
+            <span class="txt nopic">行情图形</span>
+            <b class="bala" id="btnlist" style="display:none"></b>
+            <b class="TradeChartTool"></b>
+        </div>
+        <div id="switch_nav" class="switch_nav">
+            <ul class="clearfix" id="ul_city"></ul>
+        </div>
+        <div class="space"></div>
+        <div class="tradeMark">
+            <ul class="tradeMarkTime"><li>1个月</li><li class="curr">3个月</li><li>6个月</li><li>1年</li></ul>
+            <ul class="roseTabel">
+                <li class="co_ff4416">
+                    <span class="txt">北京</span><span class="txt">涨幅：</span><span class="count co_ff4416">-2.35%</span>
+                </li>
+                <li class="co_009143">
+                    <span class="txt">市场均价</span><span class="txt">涨幅：</span><span class="count co_009143">-2.35%</span>
+                </li>
+            </ul>
+            <ul class="roseTabel curr">
+                <li class="co_ff4416">
+                    <span class="txt">北京</span><span class="txt">成交价：</span><span class="count">25.60</span>
+                </li>
+                <li class="co_009143">
+                    <span class="txt">市场均价</span><span class="txt">成交价：</span><span class="count">24.56</span>
+                </li>
+            </ul>
+        </div>
+        <div class="tradeMark">
+            <ul class="roseTabel tabel_25">
+                <li class="co_ff4416">
+                    <span class="txt co_">北京</span>
+                </li class="co_ff4416">
+                <li class="co_ff4416">
+                    <span class="txt">天津</span>
+                </li>
+                <li class="co_05a1ff">
+                    <span class="txt">上海</span>
+                </li>
+                <li class="co_ffce08">
+                    <span class="txt">深圳</span>
+                </li>
+                <li class="co_ff66ff">
+                    <span class="txt">北京</span>
+                </li>
+                <li class="co_7958ba">
+                    <span class="txt">天津</span>
+                </li>
+                <li class="co_ffce08">
+                    <span class="txt">上海</span>
+                </li>
+                <li class="co_ff4416">
+                    <span class="txt">深圳</span>
+                </li>
+            </ul>
+        </div>
+        <div class="combinationChartWrap">
+            <ul class="k_price" id="ul_price" style="display:none"></ul>
+            <div id="combinationWrap" class="combinationWrap"></div>
+        </div>
+        <div class="page_change"><span id="span_add" class="add"></span><span id="span_minus" class="minus"></span></div>
+    </div>
+    <script type="text/javascript">
+        var staticlist = [[], ["/js/tost.js", "/js/g_app.js", "/js/iscroll.js", "/js/tradechart.js"]];
+            WriteStatic(staticlist);
+    </script>
+</body>
+</html>

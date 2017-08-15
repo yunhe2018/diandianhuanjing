@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点点环境-首页</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+    <meta property="wb:webmaster" content="b97e9eb0fa0c90be" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mwtIbCVKxq5l7TMLCpNrCnoOxGnWlotK"></script>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <script src="js/chart_baidu/doc/asset/js/codemirror.js"></script>
+    <script src="js/chart_baidu/doc/asset/js/javascript.js"></script>
+
+    <link href="js/chart_baidu/doc/asset/css/codemirror.css" rel="stylesheet">
+    <link href="js/chart_baidu/doc/asset/css/monokai.css" rel="stylesheet">
+
+<script src="js/chart_baidu/doc/example/www/js/echarts.js"></script>
+<!-- <script data-require-id="theme/macarons" src="js/chart_baidu/doc/example/theme/macarons.js" async=""></script>
+<script data-require-id="echarts/chart/line" src="js/chart_baidu/doc/example/www/js/chart/line.js" async=""></script>
+<script data-require-id="echarts/chart/bar" src="js/chart_baidu/doc/example/www/js/chart/bar.js" async=""></script>
+<script data-require-id="echarts/chart/scatter" src="js/chart_baidu/doc/example/www/js/chart/scatter.js" async=""></script>
+<script data-require-id="echarts/chart/k" src="js/chart_baidu/doc/example/www/js/chart/k.js" async=""></script>
+<script data-require-id="echarts/chart/pie" src="js/chart_baidu/doc/example/www/js/chart/pie.js" async=""></script>
+<script data-require-id="echarts/chart/radar" src="js/chart_baidu/doc/example/www/js/chart/radar.js" async=""></script>
+<script data-require-id="echarts/chart/force" src="js/chart_baidu/doc/example/www/js/chart/force.js" async=""></script>
+<script data-require-id="echarts/chart/chord" src="js/chart_baidu/doc/example/www/js/chart/chord.js" async=""></script>
+<script data-require-id="echarts/chart/gauge" src="js/chart_baidu/doc/example/www/js/chart/gauge.js" async=""></script>
+<script data-require-id="echarts/chart/funnel" src="js/chart_baidu/doc/example/www/js/chart/funnel.js" async=""></script>
+<script data-require-id="echarts/chart/eventRiver" src="js/chart_baidu/doc/example/www/js/chart/eventRiver.js" async=""></script>
+<script data-require-id="echarts/chart/venn" src="js/chart_baidu/doc/example/www/js/chart/venn.js" async=""></script>
+<script data-require-id="echarts/chart/treemap" src="js/chart_baidu/doc/example/www/js/chart/treemap.js" async=""></script>
+<script data-require-id="echarts/chart/tree" src="js/chart_baidu/doc/example/www/js/chart/tree.js" async=""></script>
+<script data-require-id="echarts/chart/wordCloud" src="js/chart_baidu/doc/example/www/js/chart/wordCloud.js" async=""></script>
+<script data-require-id="echarts/chart/heatmap" src="js/chart_baidu/doc/example/www/js/chart/heatmap.js" async=""></script> -->
+</head>
+
+
+<body>
+    <div class="map-for-location" id="allmap"></div>
+    <div class="indexBox" >
+        <div class="weather clearfix" id="div_weather">
+            <span class="pic fl"></span>
+            <span class="txt fl" id="span_temp"></span>
+        </div>
+        <div class="lt_date" id="lt_date">
+            <div class="zuji" id="div_zuji">
+                <span class="pic fl" id="div_step"></span>
+                <span class="txt fl" id="span_step"></span>
+            </div>
+            <div class="zuji" id="div_tb">
+                <span class="tanbi fl" id="div_carbon"></span>
+                <span class="txt fl" id="span_tb"></span>
+            </div>
+        </div>
+            <div class="updateOrCore">
+                <span class="update" id="span_update"></span>
+                <span class="core" id="span_core"></span>
+            </div>
+            <ul class="topMenu">
+                <li id="wode">
+                    <div class="pic"></div>
+                    <p class="txt">我的</p>
+                </li>
+                <li id="loupan">
+                    <div class="pic"></div>
+                    <p class="txt">楼盘</p>
+                </li>
+                <li id="buy" style="display:none">
+                    <div class="pic"></div>
+                    <p class="txt">报告</p>
+                </li>
+                <!--<li id="center">
+                <div class="pic"></div>
+                <p class="txt">中心</p>
+            </li>-->
+            </ul>
+            <b class="bigcart"></b>
+            <span class="position_curr" style="display:none">当前位置<i></i></span>
+        </div>
+    <div class="thirdIndex">
+    	<!--底部环境评分和位置定位-->
+    	<div class="pmWrap pmWrap-good no clearfix">
+                <span class="slide"></span>
+                <div class="pm bad fl" id="div_score"><p>环境质量评分：</p>22<span>分</span></div>
+                <div class="address fl">
+                    <p id="p_PositionName">东城区中华路甲10号</p>
+                    <div class="clearfix">
+                        <span class="pic fl" id="div_level"><img id="" src="img/bad.png"> </span>
+                        <span class="txt fl" id="div_upper">环境质量差，一项或多项环境指标严重不达标。更多详情，请购买环境质量报告。</span>
+                    </div>
+                </div>
+            </div>
+        <!--end-->
+        <!--新首页上滑-->
+        <div class="newBox">
+            <div class="header">
+                <span class="back" id="add_btn"></span>
+                <span class="txt" id="span_PositionName">东城区中华路甲10号</span>
+                <span class="operat">...</span>
+            </div>
+    		
+            <div class="general clearfix">
+            	<div class="score">
+                	<img src="img/general.png" >
+                    <div class="pm"><span>环境质量评分：</span>47</div>
+                    <span class="pic fl"><img id="" src="img/bad.png"> </span>
+                    <div class="weather_02 clearfix">
+                            <span class="pic02 fl"></span>
+                            <span class="txt fl">23°/30°</span>
+                    </div>
+                </div>
+                <!--绘制雷达图-->
+                <div class="chartWrap">
+                	<div id="main" class="chartPic"><!-- <canvas id="myChart" width="100%" height="100%"></canvas> --></div>
+                	<div class="chartTxt">
+                    
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+            
+            
+            <ul class="botNav">
+                <li id="zhuye">
+                    <span class="curr">首页</span>
+                </li>
+                <li id="loupan1">
+                    <span>楼盘</span>
+                </li>
+                <li id="buy1">
+                    <span>报告库</span>
+                </li>
+                <li id="wode1">
+                    <span>我的</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="APIdialog" id="div_AQI" style="display:none">
+        <p>莫叹天之晴好，莫叹天之晴好，莫叹天之晴好，莫叹天之晴好，莫叹天之晴好，莫叹天之晴好，莫叹天之晴好，莫叹天之晴好，莫叹天之晴好，不畏日之焦灼。</p>
+        
+    </div>
+
+
+<div class="container-fluid">
+        <div class="row-fluid example">
+            <div id="sidebar-code" class="col-md-4">
+                <div class="well sidebar-nav">
+                    <div class="nav-header"><a href="#" onclick="autoResize()" class="glyphicon glyphicon-resize-full" id ="icon-resize" ></a>option</div>
+                    <textarea id="code" name="code" style="opacity:0;">
+option = {
+    title : {
+        text: '罗纳尔多 vs 舍普琴科',
+        subtext: '完全实况球员数据'
+    },
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        x : 'center',
+        data:['罗纳尔多','舍普琴科']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    polar : [
+        {
+            indicator : [
+                {text : '进攻', max  : 100},
+                {text : '防守', max  : 100},
+                {text : '体能', max  : 100},
+                {text : '速度', max  : 100},
+                {text : '力量', max  : 100},
+                {text : '技巧', max  : 100}
+            ],
+            radius : 130
+        }
+    ],
+    series : [
+        {
+            name: '完全实况球员数据',
+            type: 'radar',
+            itemStyle: {
+                normal: {
+                    areaStyle: {
+                        type: 'default'
+                    }
+                }
+            },
+            data : [
+                {
+                    value : [97, 42, 88, 94, 90, 86],
+                    name : '舍普琴科'
+                },
+                {
+                    value : [97, 32, 74, 95, 88, 92],
+                    name : '罗纳尔多'
+                }
+            ]
+        }
+    ]
+};
+                    </textarea>
+              </div><!--/.well -->
+            </div><!--/span-->
+            <div id="graphic" class="col-md-8">
+                <div id="main" class="main"></div>
+                <div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="refresh(true)">刷 新</button>
+                    <span class="text-primary">切换主题</span>
+                    <select id="theme-select"></select>
+
+                    <span id='wrong-message' style="color:red"></span>
+                </div>
+            </div><!--/span-->
+        </div><!--/row-->
+        
+        </div><!--/.fluid-container-->
+</body>
+</html>
+<script src="js/jquery-2.1.4-min.js"></script>
+<!-- <script type="text/javascript" src="js/chart_baidu/doc/asset/js/echartsHome.js"></script> -->
+<script src="js/chart_baidu/doc/asset/js/bootstrap.min.js"></script>
+<script src="js/chart_baidu/doc/asset/js/echartsExample.js"></script>
+

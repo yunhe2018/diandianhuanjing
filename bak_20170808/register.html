@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>点点环境-注册</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="telephone=no" name="format-detection">
+        <meta content="email=no" name="format-detection" />
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta name="baidu-site-verification" content="PZzEtDyOeJ" />
+        <script src="/js/cdn.js"></script>
+        <script type="text/javascript">
+            var staticlist = [["/css/base.css", "/css/style.css"], ["/js/jquery-2.1.4-min.js", "/js/g_Const.js", "/js/g_header.js"]];
+            WriteStatic(staticlist);
+        </script>
+    </head>
+    <body>
+        <div class="headerSpace"></div>
+        <div class="header02">
+            <b class="back" id="back_btn"></b>
+            <span class="txt nopic">注册</span>
+            <b class="txt02" id="btnLogin">登录</b>
+        </div>
+        <div class="logReg">
+            <div class="head"><img src="/img/lnologin@2x.png"></div>
+
+            <div class="in">
+                <div id="li_Verify" style="display:none">
+                    <input style="background:#f8f8f8" id="txtPicCode" type="text" value="" placeholder="图片验证码" />
+                    <img src="" id="Verify_codeImag" alt="点击切换验证码"
+                         title="点击切换验证码" style="cursor: pointer;float:right;width:80px;margin-top:-47px"
+                         onclick="ToggleCode(this.id, '/Ajax/LoginHandler.ashx'); return false;" />
+                </div>
+                <input style="background:#f8f8f8" type="tel" placeholder="手机号" id="txtPhoneNo">
+                <input style="background:#f8f8f8" type="text" placeholder="验证码" id="txtValidCode">
+                <input style="background:#f8f8f8" type="password" placeholder="密码" id="txtPass">
+                <b class="codeBtn" id="btnCode">获取验证码</b>
+                <span class="loginBtn" id="btnPhoneRegister">注册</span>
+                <div class="agreement">
+                    <span class="c_box act fl"><input type="checkbox" ></span><span class="txt fl">阅读并同意微环境条款协议</span>
+                </div>
+            </div>
+        </div>
+
+
+        
+      
+
+    </body>
+    <script>
+        var staticlist = [[], ["/js/tost.js", "/js/JValidator.js", "/js/ValidCodeBase.js", "/js/g_app.js", "/js/Register.js"]];
+        WriteStatic(staticlist);
+    </script>
+</html>
